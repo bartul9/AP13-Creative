@@ -23,8 +23,8 @@ export default function ContactPage() {
   return (
     <div className="relative">
       {/* Hero Section */}
-      <section className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 pt-32">
-        <div className="max-w-4xl mx-auto space-y-8 text-center">
+      <section className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 pt-45">
+        <div className="max-w-4xl mx-auto space-y-2 text-pretty text-center">
           <h1 className="text-5xl sm:text-6xl font-bold text-balance">
             Let's <span className="text-primary glow-cyan">Connect</span>
           </h1>

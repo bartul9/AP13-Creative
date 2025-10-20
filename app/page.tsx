@@ -1,15 +1,7 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import {
-  ArrowRight,
-  Zap,
-  Shield,
-  Sparkles,
-  Code2,
-  Palette,
-  Smartphone,
-  Star,
-} from "lucide-react";
+import { ArrowRight, Sparkles } from "lucide-react";
+import { JourneyTimeline } from "@/components/journey-timeline";
 
 export default function HomePage() {
   return (
@@ -51,7 +43,7 @@ export default function HomePage() {
                 <Button
                   size="lg"
                   variant="outline"
-                  className="border-primary/30 text-foreground hover:bg-primary/10 text-lg px-8 py-6 rounded-full bg-transparent"
+                  className="border-primary/30 text-foreground hover:bg-primary/10 hover:text-white text-lg px-8 py-6 rounded-full bg-transparent"
                 >
                   View Our Work
                 </Button>
@@ -70,7 +62,7 @@ export default function HomePage() {
               </div>
               <div className="space-y-2 p-6 rounded-xl bg-card/50 border border-border hover:box-glow-cyan transition-all duration-300">
                 <div className="text-5xl font-bold text-primary glow-cyan">
-                  100+
+                  10+
                 </div>
                 <div className="text-sm text-muted-foreground">
                   Projects Delivered
@@ -78,7 +70,7 @@ export default function HomePage() {
               </div>
               <div className="space-y-2 p-6 rounded-xl bg-card/50 border border-border hover:box-glow-cyan transition-all duration-300">
                 <div className="text-5xl font-bold text-primary glow-cyan">
-                  15+
+                  5+
                 </div>
                 <div className="text-sm text-muted-foreground">
                   Countries Served
@@ -89,94 +81,8 @@ export default function HomePage() {
         </main>
       </section>
 
-      {/* Features Section */}
-      <section className="relative py-32 bg-gradient-to-b from-background to-card/20">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-6xl mx-auto space-y-16">
-            <div className="text-center space-y-4">
-              <h2 className="text-4xl sm:text-5xl font-bold text-balance">
-                Why Choose{" "}
-                <span className="text-primary glow-cyan">AP13 Creative</span>
-              </h2>
-              <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-                We combine technical expertise with creative excellence to
-                deliver exceptional results
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              <div className="group p-8 rounded-2xl bg-card border border-border hover:box-glow-cyan transition-all duration-300">
-                <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                  <Zap className="w-7 h-7 text-primary" />
-                </div>
-                <h3 className="text-2xl font-bold mb-4">Lightning Fast</h3>
-                <p className="text-foreground/70 leading-relaxed">
-                  We move at startup speed without compromising quality. Your
-                  project launches faster than you'd expect.
-                </p>
-              </div>
-
-              <div className="group p-8 rounded-2xl bg-card border border-border hover:box-glow-cyan transition-all duration-300">
-                <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                  <Shield className="w-7 h-7 text-primary" />
-                </div>
-                <h3 className="text-2xl font-bold mb-4">Enterprise Grade</h3>
-                <p className="text-foreground/70 leading-relaxed">
-                  Built with security, scalability, and performance in mind.
-                  Production-ready code from day one.
-                </p>
-              </div>
-
-              <div className="group p-8 rounded-2xl bg-card border border-border hover:box-glow-cyan transition-all duration-300">
-                <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                  <Sparkles className="w-7 h-7 text-primary" />
-                </div>
-                <h3 className="text-2xl font-bold mb-4">Pixel Perfect</h3>
-                <p className="text-foreground/70 leading-relaxed">
-                  Every detail matters. We craft experiences that are beautiful,
-                  intuitive, and memorable.
-                </p>
-              </div>
-
-              <div className="group p-8 rounded-2xl bg-card border border-border hover:box-glow-cyan transition-all duration-300">
-                <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                  <Code2 className="w-7 h-7 text-primary" />
-                </div>
-                <h3 className="text-2xl font-bold mb-4">Modern Stack</h3>
-                <p className="text-foreground/70 leading-relaxed">
-                  Next.js, React, TypeScript, and cutting-edge AI. We use the
-                  best tools for the job.
-                </p>
-              </div>
-
-              <div className="group p-8 rounded-2xl bg-card border border-border hover:box-glow-cyan transition-all duration-300">
-                <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                  <Palette className="w-7 h-7 text-primary" />
-                </div>
-                <h3 className="text-2xl font-bold mb-4">Design First</h3>
-                <p className="text-foreground/70 leading-relaxed">
-                  User experience drives everything we do. Beautiful interfaces
-                  that users love to interact with.
-                </p>
-              </div>
-
-              <div className="group p-8 rounded-2xl bg-card border border-border hover:box-glow-cyan transition-all duration-300">
-                <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                  <Smartphone className="w-7 h-7 text-primary" />
-                </div>
-                <h3 className="text-2xl font-bold mb-4">Mobile Ready</h3>
-                <p className="text-foreground/70 leading-relaxed">
-                  Responsive by default. Your app looks and works perfectly on
-                  every device and screen size.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Process Section */}
-      <section className="relative py-32">
+      <section className="relative pt-12 pb-32">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-6xl mx-auto space-y-16">
             <div className="text-center space-y-4">
@@ -230,69 +136,19 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Testimonials Section */}
-      <section className="relative py-32 bg-gradient-to-b from-card/20 to-background">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-6xl mx-auto space-y-16">
-            <div className="text-center space-y-4">
-              <h2 className="text-4xl sm:text-5xl font-bold text-balance">
-                What Our{" "}
-                <span className="text-primary glow-cyan">Clients Say</span>
-              </h2>
-              <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-                Don't just take our word for it
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {[
-                {
-                  name: "Sarah Johnson",
-                  role: "CEO, TechStart",
-                  content:
-                    "AP13 Creative transformed our vision into reality. The team's expertise and dedication exceeded all expectations.",
-                  rating: 5,
-                },
-                {
-                  name: "Michael Chen",
-                  role: "Founder, AppFlow",
-                  content:
-                    "Working with AP13 was a game-changer. They delivered a stunning mobile app ahead of schedule.",
-                  rating: 5,
-                },
-                {
-                  name: "Emma Williams",
-                  role: "CTO, DataSync",
-                  content:
-                    "The quality of code and attention to detail is outstanding. Highly recommend for any serious project.",
-                  rating: 5,
-                },
-              ].map((testimonial, index) => (
-                <div
-                  key={index}
-                  className="p-8 rounded-2xl bg-card border border-border hover:box-glow-cyan transition-all duration-300"
-                >
-                  <div className="flex gap-1 mb-4">
-                    {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star
-                        key={i}
-                        className="w-5 h-5 fill-primary text-primary"
-                      />
-                    ))}
-                  </div>
-                  <p className="text-foreground/80 leading-relaxed mb-6 italic">
-                    "{testimonial.content}"
-                  </p>
-                  <div>
-                    <div className="font-bold">{testimonial.name}</div>
-                    <div className="text-sm text-muted-foreground">
-                      {testimonial.role}
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
+      {/* Journey Timeline Section */}
+      <section className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 pt-12">
+        <div className="space-y-16">
+          <div className="text-center space-y-4">
+            <h2 className="text-4xl sm:text-5xl font-bold text-balance">
+              Our <span className="text-primary glow-cyan">Journey</span>
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              From a small startup to a trusted global partner
+            </p>
           </div>
+
+          <JourneyTimeline />
         </div>
       </section>
 
