@@ -5,8 +5,8 @@ export default function AboutPage() {
   return (
     <div className="relative">
       {/* Hero Section */}
-      <section className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-20">
-        <div className="max-w-4xl mx-auto space-y-8 text-center">
+      <section className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 pt-45">
+        <div className="max-w-4xl mx-auto space-y-2 text-center">
           <h1 className="text-5xl sm:text-6xl font-bold text-balance">
             About <span className="text-primary glow-cyan">AP13 Creative</span>
           </h1>
@@ -17,10 +17,10 @@ export default function AboutPage() {
       </section>
 
       {/* Story Section */}
-      <section className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 py-20">
+      <section className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 pt-10 pb-20">
         <div className="max-w-4xl mx-auto space-y-8">
-          <div className="prose prose-invert prose-lg max-w-none">
-            <p className="text-xl leading-relaxed text-foreground/90">
+          <div className="prose prose-invert prose-lg max-w-none text-pretty">
+            <p className="text-xl leading-relaxed text-foreground/90 mt-2 ">
               We are a small, passionate team of developers and designers with{" "}
               <span className="text-primary font-semibold">
                 50+ years of combined experience
@@ -29,7 +29,7 @@ export default function AboutPage() {
               precision, and creativity.
             </p>
 
-            <p className="text-lg leading-relaxed text-foreground/80">
+            <p className="text-lg leading-relaxed text-foreground/80 mt-4">
               Based in Split, Croatia, we work with clients globally, delivering
               cutting-edge web and mobile applications that don't just meet
               expectations—they exceed them. We believe in modern technologies,
@@ -87,33 +87,6 @@ export default function AboutPage() {
                 scalable, maintainable solutions that stand the test of time.
               </p>
             </div>
-
-            <div className="bg-card border border-border rounded-2xl p-8 hover:box-glow-cyan transition-all duration-300">
-              <Users className="w-12 h-12 text-primary mb-4" />
-              <h3 className="text-2xl font-bold mb-3">Client Partnership</h3>
-              <p className="text-foreground/80 leading-relaxed">
-                Your success is our success. We're partners in bringing your
-                digital vision to life, not just service providers.
-              </p>
-            </div>
-
-            <div className="bg-card border border-border rounded-2xl p-8 hover:box-glow-cyan transition-all duration-300">
-              <Target className="w-12 h-12 text-primary mb-4" />
-              <h3 className="text-2xl font-bold mb-3">Results Driven</h3>
-              <p className="text-foreground/80 leading-relaxed">
-                We focus on outcomes that matter. Every decision is made with
-                your business goals and user needs in mind.
-              </p>
-            </div>
-
-            <div className="bg-card border border-border rounded-2xl p-8 hover:box-glow-cyan transition-all duration-300">
-              <Heart className="w-12 h-12 text-primary mb-4" />
-              <h3 className="text-2xl font-bold mb-3">Passion & Care</h3>
-              <p className="text-foreground/80 leading-relaxed">
-                We genuinely care about every project we take on. Your vision
-                becomes our mission, and we pour our hearts into it.
-              </p>
-            </div>
           </div>
         </div>
       </section>
@@ -135,7 +108,7 @@ export default function AboutPage() {
       </section>
 
       {/* Team Section */}
-      <section className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 py-20 pb-32">
+      {/*       <section className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 py-20 pb-32">
         <div className="max-w-4xl mx-auto text-center space-y-8">
           <h2 className="text-4xl sm:text-5xl font-bold text-balance">
             Join Our <span className="text-primary glow-cyan">Team</span>
@@ -154,7 +127,7 @@ export default function AboutPage() {
             </a>
           </div>
         </div>
-      </section>
+      </section> */}
     </div>
   );
 }

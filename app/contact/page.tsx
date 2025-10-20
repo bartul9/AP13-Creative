@@ -12,20 +12,18 @@ export default function ContactPage() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    company: "",
     message: "",
   });
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission
     console.log("Form submitted:", formData);
   };
 
   return (
     <div className="relative">
       {/* Hero Section */}
-      <section className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-20">
+      <section className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 pt-32">
         <div className="max-w-4xl mx-auto space-y-8 text-center">
           <h1 className="text-5xl sm:text-6xl font-bold text-balance">
             Let's <span className="text-primary glow-cyan">Connect</span>
@@ -38,7 +36,7 @@ export default function ContactPage() {
       </section>
 
       {/* Contact Section */}
-      <section className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 py-20 pb-32">
+      <section className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-32">
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Contact Form */}
@@ -80,21 +78,6 @@ export default function ContactPage() {
                       setFormData({ ...formData, email: e.target.value })
                     }
                     required
-                    className="bg-background border-border h-12"
-                  />
-                </div>
-
-                <div className="space-y-2">
-                  <label htmlFor="company" className="text-sm font-medium">
-                    Company
-                  </label>
-                  <Input
-                    id="company"
-                    placeholder="Your company name (optional)"
-                    value={formData.company}
-                    onChange={(e) =>
-                      setFormData({ ...formData, company: e.target.value })
-                    }
                     className="bg-background border-border h-12"
                   />
                 </div>
@@ -182,27 +165,6 @@ export default function ContactPage() {
                     </div>
                   </div>
                 </div>
-              </div>
-
-              <div className="bg-card border border-border rounded-3xl p-8 space-y-4 hover:box-glow-cyan transition-all duration-300">
-                <div className="flex items-center gap-3 mb-4">
-                  <Clock className="w-6 h-6 text-primary" />
-                  <h3 className="text-xl font-bold">Working Hours</h3>
-                </div>
-                <div className="space-y-3">
-                  <div className="flex justify-between items-center py-2 border-b border-border/50">
-                    <span className="text-foreground/70">Monday - Friday</span>
-                    <span className="font-semibold">9:00 AM - 6:00 PM CET</span>
-                  </div>
-                  <div className="flex justify-between items-center py-2">
-                    <span className="text-foreground/70">Weekend</span>
-                    <span className="font-semibold">By appointment</span>
-                  </div>
-                </div>
-                <p className="text-sm text-foreground/60 pt-2">
-                  We're flexible and can accommodate different time zones for
-                  meetings.
-                </p>
               </div>
             </div>
           </div>

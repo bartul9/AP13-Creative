@@ -22,6 +22,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <meta
+          name="apple-mobile-web-app-title"
+          content="AP13 Creative"
+        />
+      </head>
       <body className={`${inter.className} font-sans antialiased`}>
         <Navigation />
         {children}

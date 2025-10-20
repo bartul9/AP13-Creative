@@ -109,8 +109,8 @@ export default function CareersPage() {
   return (
     <div className="relative">
       {/* Hero Section */}
-      <section className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-20">
-        <div className="max-w-4xl mx-auto space-y-8 text-center">
+      <section className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 pt-45">
+        <div className="max-w-4xl mx-auto space-y-2 text-center">
           <h1 className="text-5xl sm:text-6xl font-bold text-balance">
             Join the{" "}
             <span className="text-primary glow-cyan">Creative Force</span>
