@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Sparkles } from "lucide-react";
 import { JourneyTimeline } from "@/components/journey-timeline";
+import { StatsShowcase } from "@/components/stats-showcase";
 
 export default function HomePage() {
   return (
@@ -51,32 +52,7 @@ export default function HomePage() {
             </div>
 
             {/* Stats */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 pt-20 max-w-4xl mx-auto animate-fade-in-up animation-delay-600">
-              <div className="space-y-2 p-6 rounded-xl bg-card/50 border border-border hover:box-glow-cyan transition-all duration-300">
-                <div className="text-5xl font-bold text-primary glow-cyan">
-                  50+
-                </div>
-                <div className="text-sm text-muted-foreground">
-                  Years Combined Experience
-                </div>
-              </div>
-              <div className="space-y-2 p-6 rounded-xl bg-card/50 border border-border hover:box-glow-cyan transition-all duration-300">
-                <div className="text-5xl font-bold text-primary glow-cyan">
-                  10+
-                </div>
-                <div className="text-sm text-muted-foreground">
-                  Projects Delivered
-                </div>
-              </div>
-              <div className="space-y-2 p-6 rounded-xl bg-card/50 border border-border hover:box-glow-cyan transition-all duration-300">
-                <div className="text-5xl font-bold text-primary glow-cyan">
-                  5+
-                </div>
-                <div className="text-sm text-muted-foreground">
-                  Countries Served
-                </div>
-              </div>
-            </div>
+            <StatsShowcase />
           </div>
         </main>
       </section>
