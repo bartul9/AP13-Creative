@@ -10,11 +10,11 @@ export function Footer() {
           {/* Brand Section */}
           <div className="space-y-4">
             <Image
-              src="/logo.png"
+              src="/logo1.png"
               alt="AP13 Creative"
-              width={140}
-              height={48}
-              className="h-10 w-auto"
+              width={150}
+              height={70}
+              className="h-8 w-auto"
             />
             <p className="text-sm text-foreground/70 leading-relaxed">
               Turning your vision into high-quality digital reality with speed,

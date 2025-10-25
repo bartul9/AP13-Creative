@@ -26,10 +26,10 @@ export function Navigation() {
         <div className="flex items-center justify-between h-16">
           <Link href="/" className="flex items-center gap-3">
             <Image
-              src="/logo.png"
+              src="/logo1.png"
               alt="AP13 Creative"
-              width={120}
-              height={40}
+              width={150}
+              height={70}
               className="h-8 w-auto"
             />
           </Link>
