@@ -31,9 +31,6 @@ export function StatsShowcase() {
             <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
             <div className="absolute -inset-px rounded-[28px] opacity-0 blur-2xl transition-opacity duration-700 group-hover:opacity-100 bg-[conic-gradient(at_top_left,_rgba(56,189,248,0.25),_transparent_45%,_transparent_70%,_rgba(34,211,238,0.25))]" />
             <div className="relative space-y-4">
-              <div className="text-xs font-semibold uppercase tracking-[0.25em] text-primary/70">
-                Impact
-              </div>
               <div className="text-6xl font-semibold leading-none text-transparent bg-gradient-to-r from-primary to-cyan-300 bg-clip-text drop-shadow-[0_0_18px_rgba(34,211,238,0.35)]">
                 {stat.value}
               </div>
