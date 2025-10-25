@@ -152,7 +152,7 @@ export default function ContactPage() {
                     <div>
                       <div className="font-semibold mb-1 text-lg">LinkedIn</div>
                       <a
-                        href="https://linkedin.com"
+                        href="https://www.linkedin.com/company/ap13-creative"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-primary hover:underline hover:text-primary/80 transition-colors"

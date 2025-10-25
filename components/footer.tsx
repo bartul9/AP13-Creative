@@ -22,7 +22,7 @@ export function Footer() {
             </p>
             <div className="flex items-center gap-3">
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/company/ap13-creative"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-9 h-9 rounded-lg bg-card border border-border flex items-center justify-center hover:bg-primary/10 hover:border-primary transition-all"
@@ -30,20 +30,12 @@ export function Footer() {
                 <Linkedin className="w-4 h-4 text-foreground/70 hover:text-primary" />
               </a>
               <a
-                href="https://github.com"
+                href="https://github.com/bartul9"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-9 h-9 rounded-lg bg-card border border-border flex items-center justify-center hover:bg-primary/10 hover:border-primary transition-all"
               >
                 <Github className="w-4 h-4 text-foreground/70 hover:text-primary" />
-              </a>
-              <a
-                href="https://twitter.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-9 h-9 rounded-lg bg-card border border-border flex items-center justify-center hover:bg-primary/10 hover:border-primary transition-all"
-              >
-                <Twitter className="w-4 h-4 text-foreground/70 hover:text-primary" />
               </a>
             </div>
           </div>
@@ -56,20 +48,28 @@ export function Footer() {
             <ul className="space-y-3">
               <li>
                 <Link
+                  href="/"
+                  className="text-sm text-foreground/70 hover:text-primary transition-colors"
+                >
+                  Home
+                </Link>
+              </li>
+              <li>
+                <Link
                   href="/services"
                   className="text-sm text-foreground/70 hover:text-primary transition-colors"
                 >
                   Services
                 </Link>
               </li>
-              <li>
+              {/*               <li>
                 <Link
                   href="/projects"
                   className="text-sm text-foreground/70 hover:text-primary transition-colors"
                 >
                   Projects
                 </Link>
-              </li>
+              </li> */}
               <li>
                 <Link
                   href="/contact"
