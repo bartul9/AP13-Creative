@@ -41,6 +41,7 @@ export default function HomePage() {
                 </Button>
               </Link>
             </div>
+            <div className="absolute inset-x-0 top-175 mx-auto h-64 w-[480px] rounded-full bg-primary/20 blur-3xl" />
 
             {/* Stats */}
             <StatsShowcase />

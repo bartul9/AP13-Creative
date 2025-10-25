@@ -1,5 +1,3 @@
-import { ScrollReveal } from "./scroll-reveal";
-
 const stats = [
   {
     value: "50+",
@@ -24,7 +22,6 @@ const stats = [
 export function StatsShowcase() {
   return (
     <div className="relative mx-auto w-full max-w-5xl">
-      <div className="absolute inset-x-0 -top-16 mx-auto h-64 w-[480px] rounded-full bg-primary/20 blur-3xl" />
       <div className="relative grid gap-6 pt-20 sm:grid-cols-3">
         {stats.map((stat, index) => (
           <div
