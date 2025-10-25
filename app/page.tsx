@@ -40,15 +40,6 @@ export default function HomePage() {
                   <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </Link>
-              <Link href="/projects">
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="border-primary/30 text-foreground hover:bg-primary/10 hover:text-white text-lg px-8 py-6 rounded-full bg-transparent"
-                >
-                  View Our Work
-                </Button>
-              </Link>
             </div>
 
             {/* Stats */}
