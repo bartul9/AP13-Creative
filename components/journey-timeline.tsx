@@ -7,7 +7,7 @@ import {
   Users,
   TrendingUp,
   Award,
-  Globe,
+  Sparkle,
 } from "lucide-react";
 
 const milestones = [
@@ -16,7 +16,7 @@ const milestones = [
     title: "The Spark",
     description:
       "Started shipping freelance projects and sharpening the React/JS craft. First real-world apps, first late-night deploys.",
-    icon: Lightbulb,
+    icon: Sparkle,
   },
   {
     year: "2021",
