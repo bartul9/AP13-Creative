@@ -29,14 +29,6 @@ export function Footer() {
               >
                 <Linkedin className="w-4 h-4 text-foreground/70 hover:text-primary" />
               </a>
-              <a
-                href="https://github.com/bartul9"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-9 h-9 rounded-lg bg-card border border-border flex items-center justify-center hover:bg-primary/10 hover:border-primary transition-all"
-              >
-                <Github className="w-4 h-4 text-foreground/70 hover:text-primary" />
-              </a>
             </div>
           </div>
 
