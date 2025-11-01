@@ -9,11 +9,10 @@ import Image from "next/image";
 
 const navItems = [
   { href: "/", label: "Home" },
-  /*   { href: "/about", label: "About" },
-   */ { href: "/services", label: "Services" },
-  /*   { href: "/projects", label: "Projects" },
-   */ /*   { href: "/careers", label: "Careers" },
-   */ { href: "/contact", label: "Contact" },
+  { href: "/about", label: "About" },
+  { href: "/services", label: "Services" },
+  { href: "/projects", label: "Projects" },
+  { href: "/contact", label: "Contact" },
 ];
 
 export function Navigation() {

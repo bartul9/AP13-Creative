@@ -48,20 +48,28 @@ export function Footer() {
               </li>
               <li>
                 <Link
+                  href="/about"
+                  className="text-sm text-foreground/70 hover:text-primary transition-colors"
+                >
+                  About
+                </Link>
+              </li>
+              <li>
+                <Link
                   href="/services"
                   className="text-sm text-foreground/70 hover:text-primary transition-colors"
                 >
                   Services
                 </Link>
               </li>
-              {/*               <li>
+              <li>
                 <Link
                   href="/projects"
                   className="text-sm text-foreground/70 hover:text-primary transition-colors"
                 >
                   Projects
                 </Link>
-              </li> */}
+              </li>
               <li>
                 <Link
                   href="/contact"

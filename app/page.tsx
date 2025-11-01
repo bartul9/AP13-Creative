@@ -13,8 +13,7 @@ export default function HomePage() {
           <div className="max-w-5xl mx-auto text-center space-y-8">
             <div className="inline-block animate-fade-in">
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-sm text-primary mb-6">
-                <Sparkles className="w-4 h-4" />
-                <span>Crafting Digital Excellence Since 2020</span>
+                <span>Crafting Digital Excellence</span>
               </div>
             </div>
 

@@ -83,7 +83,7 @@ export default function ProjectsPage() {
             {projects.map((project, index) => (
               <div
                 key={index}
-                className="group bg-card border border-border rounded-2xl overflow-hidden hover:box-glow-cyan transition-all duration-300 cursor-pointer flex flex-col"
+                className="bg-card border border-border rounded-2xl overflow-hidden hover:box-glow-cyan transition-all duration-300 flex flex-col"
               >
                 <div className="relative h-56 overflow-hidden">
                   <Image
@@ -93,9 +93,6 @@ export default function ProjectsPage() {
                     className="object-cover group-hover:scale-110 transition-transform duration-500"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-card via-card/50 to-transparent" />
-                  <div className="absolute top-4 right-4">
-                    <ExternalLink className="w-5 h-5 text-primary opacity-0 group-hover:opacity-100 transition-opacity" />
-                  </div>
                 </div>
                 <div className="p-6 space-y-4 flex-1 flex flex-col">
                   <div className="text-xs font-semibold text-primary uppercase tracking-wider">

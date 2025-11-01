@@ -46,44 +46,6 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
-
-      {/* Journey Timeline Section */}
-      <section className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-32">
-        <div className="space-y-16">
-          <div className="text-center space-y-4">
-            <h2 className="text-4xl sm:text-5xl font-bold text-balance">
-              Our <span className="text-primary glow-cyan">Journey</span>
-            </h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              From a small startup to a trusted global partner
-            </p>
-          </div>
-
-          <JourneyTimeline />
-        </div>
-      </section>
-
-      {/* Team Section */}
-      {/*       <section className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 py-20 pb-32">
-        <div className="max-w-4xl mx-auto text-center space-y-8">
-          <h2 className="text-4xl sm:text-5xl font-bold text-balance">
-            Join Our <span className="text-primary glow-cyan">Team</span>
-          </h2>
-          <p className="text-xl text-foreground/80 leading-relaxed">
-            We're always looking for talented individuals who share our passion
-            for innovation and excellence. If you're ready to work on exciting
-            projects with a global team, we'd love to hear from you.
-          </p>
-          <div className="pt-4">
-            <a
-              href="/careers"
-              className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-primary text-primary-foreground hover:bg-primary/90 box-glow-cyan hover:box-glow-cyan-hover transition-all duration-300 font-semibold"
-            >
-              View Open Positions
-            </a>
-          </div>
-        </div>
-      </section> */}
     </div>
   );
 }
