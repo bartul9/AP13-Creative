@@ -25,10 +25,10 @@ export default function ContactPage() {
       {/* Hero Section */}
       <section className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 pt-45">
         <div className="max-w-4xl mx-auto space-y-2 text-pretty text-center">
-          <h1 className="text-5xl sm:text-6xl font-bold text-balance">
+          <h1 className="text-5xl sm:text-6xl font-bold text-balance animate-fade-in-up">
             Let's <span className="text-primary glow-cyan">Connect</span>
           </h1>
-          <p className="text-xl text-muted-foreground text-pretty">
+          <p className="text-xl text-muted-foreground text-pretty animate-fade-in-up animation-delay-200">
             Ready to bring your vision to life? Get in touch with us today and
             let's create something amazing together.
           </p>
@@ -40,7 +40,7 @@ export default function ContactPage() {
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Contact Form */}
-            <div className="bg-card border border-border rounded-3xl p-8 md:p-10 space-y-8 hover:box-glow-cyan transition-all duration-300">
+            <div className="bg-card border border-border rounded-3xl p-8 md:p-10 space-y-8 hover:box-glow-cyan transition-all duration-300 animate-fade-in-up">
               <div className="space-y-2">
                 <h2 className="text-3xl font-bold">Send us a message</h2>
                 <p className="text-foreground/70">
@@ -111,7 +111,7 @@ export default function ContactPage() {
 
             {/* Contact Information */}
             <div className="space-y-8">
-              <div className="bg-card border border-border rounded-3xl p-8 space-y-6 hover:box-glow-cyan transition-all duration-300">
+              <div className="bg-card border border-border rounded-3xl p-8 space-y-6 hover:box-glow-cyan transition-all duration-300 animate-fade-in-up animation-delay-150">
                 <h2 className="text-2xl font-bold">Get in touch</h2>
                 <div className="space-y-6">
                   <div className="flex items-start gap-4">

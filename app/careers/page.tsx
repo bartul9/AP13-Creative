@@ -111,11 +111,11 @@ export default function CareersPage() {
       {/* Hero Section */}
       <section className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 pt-45">
         <div className="max-w-4xl mx-auto space-y-2 text-center">
-          <h1 className="text-5xl sm:text-6xl font-bold text-balance">
+          <h1 className="text-5xl sm:text-6xl font-bold text-balance animate-fade-in-up">
             Join the{" "}
             <span className="text-primary glow-cyan">Creative Force</span>
           </h1>
-          <p className="text-xl text-muted-foreground text-pretty">
+          <p className="text-xl text-muted-foreground text-pretty animate-fade-in-up animation-delay-200">
             Be part of a team that's shaping the future of digital experiences.
             Work on exciting projects with talented people from around the
             world.
@@ -141,7 +141,7 @@ export default function CareersPage() {
               return (
                 <div
                   key={index}
-                  className="bg-card border border-border rounded-2xl p-6 hover:box-glow-cyan transition-all duration-300"
+                  className="bg-card border border-border rounded-2xl p-6 hover:box-glow-cyan transition-all duration-300 animate-fade-in-up animation-delay-150"
                 >
                   <Icon className="w-10 h-10 text-primary mb-4" />
                   <h3 className="text-xl font-bold mb-2">{benefit.title}</h3>
@@ -171,7 +171,7 @@ export default function CareersPage() {
             {openings.map((opening, index) => (
               <div
                 key={index}
-                className="bg-card border border-border rounded-2xl p-8 hover:box-glow-cyan transition-all duration-300"
+                className="bg-card border border-border rounded-2xl p-8 hover:box-glow-cyan transition-all duration-300 animate-fade-in-up animation-delay-150"
               >
                 <div className="space-y-6">
                   <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-4">

@@ -7,10 +7,10 @@ export default function AboutPage() {
       {/* Hero Section */}
       <section className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 pt-45">
         <div className="max-w-4xl mx-auto space-y-2 text-center">
-          <h1 className="text-5xl sm:text-6xl font-bold text-balance">
+          <h1 className="text-5xl sm:text-6xl font-bold text-balance animate-fade-in-up">
             About <span className="text-primary glow-cyan">AP13 Creative</span>
           </h1>
-          <p className="text-2xl text-muted-foreground text-pretty">
+          <p className="text-2xl text-muted-foreground text-pretty animate-fade-in-up animation-delay-200">
             A small, passionate team with big ambitions and even bigger results
           </p>
         </div>
@@ -19,7 +19,7 @@ export default function AboutPage() {
       {/* Story Section */}
       <section className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 pt-10 pb-20">
         <div className="max-w-4xl mx-auto space-y-8">
-          <div className="prose prose-invert prose-lg max-w-none text-pretty">
+          <div className="prose prose-invert prose-lg max-w-none text-pretty animate-fade-in-up animation-delay-300">
             <p className="text-xl leading-relaxed text-foreground/90 mt-2 ">
               We are a small, passionate team of developers and designers with{" "}
               <span className="text-primary font-semibold">

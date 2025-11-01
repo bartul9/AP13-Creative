@@ -66,10 +66,10 @@ export default function ProjectsPage() {
       {/* Hero Section */}
       <section className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 pt-45">
         <div className="max-w-4xl mx-auto space-y-2 text-center">
-          <h1 className="text-5xl sm:text-6xl font-bold text-balance">
+          <h1 className="text-5xl sm:text-6xl font-bold text-balance animate-fade-in-up">
             Our <span className="text-primary glow-cyan">Projects</span>
           </h1>
-          <p className="text-xl text-muted-foreground text-pretty">
+          <p className="text-xl text-muted-foreground text-pretty animate-fade-in-up animation-delay-200">
             A showcase of our recent work and client success stories that speak
             for themselves
           </p>
@@ -83,7 +83,7 @@ export default function ProjectsPage() {
             {projects.map((project, index) => (
               <div
                 key={index}
-                className="bg-card border border-border rounded-2xl overflow-hidden hover:box-glow-cyan transition-all duration-300 flex flex-col"
+                className="bg-card border border-border rounded-2xl overflow-hidden hover:box-glow-cyan transition-all duration-300 flex flex-col animate-fade-in-up animation-delay-150"
               >
                 <div className="relative h-56 overflow-hidden">
                   <Image

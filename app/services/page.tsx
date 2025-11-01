@@ -117,10 +117,10 @@ export default function ServicesPage() {
       {/* Hero Section */}
       <section className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 pt-45">
         <div className="max-w-4xl mx-auto space-y-2 text-center">
-          <h1 className="text-5xl sm:text-6xl font-bold text-balance">
+          <h1 className="text-5xl sm:text-6xl font-bold text-balance animate-fade-in-up">
             Our <span className="text-primary glow-cyan">Services</span>
           </h1>
-          <p className="text-xl text-muted-foreground text-pretty">
+          <p className="text-xl text-muted-foreground text-pretty animate-fade-in-up animation-delay-200">
             Comprehensive digital solutions tailored to your needs, delivered
             with expertise and passion
           </p>
@@ -135,7 +135,7 @@ export default function ServicesPage() {
             return (
               <div
                 key={index}
-                className="bg-card border border-border rounded-3xl p-8 md:p-12 hover:box-glow-cyan transition-all duration-300 group"
+                className="bg-card border border-border rounded-3xl p-8 md:p-12 hover:box-glow-cyan transition-all duration-300 group animate-fade-in-up animation-delay-150"
               >
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
                   <div className="space-y-6">
@@ -199,7 +199,7 @@ export default function ServicesPage() {
               return (
                 <div
                   key={index}
-                  className="bg-card border border-border rounded-2xl p-6 hover:box-glow-cyan transition-all duration-300 group text-center"
+                  className="bg-card border border-border rounded-2xl p-6 hover:box-glow-cyan transition-all duration-300 group text-center animate-fade-in-up animation-delay-150"
                 >
                   <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
                     <Icon className="w-6 h-6 text-primary" />
