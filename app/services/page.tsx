@@ -199,13 +199,19 @@ export default function ServicesPage() {
               return (
                 <div
                   key={index}
-                  className="bg-card border border-border rounded-2xl p-6 hover:box-glow-cyan transition-all duration-300 group text-center animate-fade-in-up animation-delay-150"
+                  className="hover-sheen bg-card border border-border rounded-2xl p-6 transition-all duration-500 group text-center animate-fade-in-up animation-delay-150 hover:-translate-y-1 hover:border-primary/40 hover:box-glow-cyan"
+                  style={{ animationDelay: `${150 + index * 120}ms` }}
                 >
-                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                  <div
+                    className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mx-auto mb-4 transition-transform duration-500 group-hover:scale-110 group-hover:bg-primary/15 animate-float-slow"
+                    style={{ animationDelay: `${index * 180}ms` }}
+                  >
                     <Icon className="w-6 h-6 text-primary" />
                   </div>
-                  <h3 className="text-lg font-bold mb-2">{service.title}</h3>
-                  <p className="text-sm text-foreground/70">
+                  <h3 className="text-lg font-bold mb-2 transition-colors duration-300 group-hover:text-primary">
+                    {service.title}
+                  </h3>
+                  <p className="text-sm text-foreground/70 transition-colors duration-300 group-hover:text-foreground/90">
                     {service.description}
                   </p>
                 </div>

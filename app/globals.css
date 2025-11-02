@@ -114,7 +114,8 @@
   }
 
   .glow-cyan-strong {
-    text-shadow: 0 0 30px rgba(0, 240, 255, 0.8), 0 0 60px rgba(0, 240, 255, 0.4);
+    text-shadow: 0 0 30px rgba(0, 240, 255, 0.8),
+      0 0 60px rgba(0, 240, 255, 0.4);
   }
 
   .box-glow-cyan {
@@ -153,9 +154,50 @@
   }
 
   .bg-grid-pattern {
-    background-image: linear-gradient(rgba(0, 240, 255, 0.1) 1px, transparent 1px),
+    background-image: linear-gradient(
+        rgba(0, 240, 255, 0.1) 1px,
+        transparent 1px
+      ),
       linear-gradient(90deg, rgba(0, 240, 255, 0.1) 1px, transparent 1px);
     background-size: 50px 50px;
+  }
+
+  .animate-float-slow {
+    animation: float 6s ease-in-out infinite;
+  }
+}
+
+@layer components {
+  .hover-sheen {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hover-sheen::after {
+    content: "";
+    position: absolute;
+    top: -60%;
+    left: -150%;
+    width: 220%;
+    height: 220%;
+    border-radius: inherit;
+    background: linear-gradient(
+      120deg,
+      transparent 35%,
+      rgba(0, 240, 255, 0.25) 50%,
+      rgba(0, 240, 255, 0.15) 60%,
+      transparent 75%
+    );
+    opacity: 0;
+    transform: translateX(-120%);
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+  }
+
+  .hover-sheen:hover::after,
+  .hover-sheen:focus-visible::after {
+    opacity: 1;
+    animation: cardSheen 1.1s ease;
   }
 }
 
@@ -177,5 +219,24 @@
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes cardSheen {
+  0% {
+    transform: translateX(-120%);
+  }
+  100% {
+    transform: translateX(120%);
   }
 }
