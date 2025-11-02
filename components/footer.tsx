@@ -62,14 +62,14 @@ export function Footer() {
                   Services
                 </Link>
               </li>
-              <li>
+              {/*               <li>
                 <Link
                   href="/projects"
                   className="text-sm text-foreground/70 hover:text-primary transition-colors"
                 >
                   Projects
                 </Link>
-              </li>
+              </li> */}
               <li>
                 <Link
                   href="/contact"
