@@ -91,6 +91,21 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              name: "AP13 Creative",
+              url: "https://ap13-creative.company",
+              logo: "https://ap13-creative.company/logo.png",
+              sameAs: ["https://www.linkedin.com/company/ap13-creative/"],
+            }),
+          }}
+        />
+      </head>
       <body className={`${inter.className} font-sans antialiased`}>
         <Navigation />
         {children}
