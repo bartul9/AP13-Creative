@@ -9,7 +9,7 @@ import { Footer } from "@/components/footer";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://ap13-creative.company/"),
+  metadataBase: new URL("https://ap13-creative.company"),
   title: {
     default: "AP13 Creative - Digital Agency",
     template: "%s | AP13 Creative",
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
   publisher: "AP13 Creative",
   category: "Digital Agency",
   alternates: {
-    canonical: "/",
+    canonical: "https://ap13-creative.company/",
   },
   openGraph: {
     type: "website",
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
     siteName: "AP13 Creative",
     images: [
       {
-        url: "/logo.png",
+        url: "https://ap13-creative.company/logo.png",
         width: 1200,
         height: 630,
         alt: "AP13 Creative branding",
@@ -57,7 +57,7 @@ export const metadata: Metadata = {
     title: "AP13 Creative - Digital Agency",
     description:
       "Turning your vision into high-quality digital reality with web and mobile app development.",
-    images: ["/logo.png"],
+    images: ["https://ap13-creative.company/logo.png"],
   },
   robots: {
     index: true,
@@ -65,9 +65,9 @@ export const metadata: Metadata = {
     googleBot: {
       index: true,
       follow: true,
-      maxSnippet: -1,
-      maxImagePreview: "large",
-      maxVideoPreview: -1,
+      "max-snippet": -1,
+      "max-image-preview": "large",
+      "max-video-preview": -1,
     },
   },
   verification: {
@@ -86,12 +86,11 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
       <head>
+        {/* Organization */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -99,9 +98,26 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "Organization",
               name: "AP13 Creative",
-              url: "https://ap13-creative.company",
+              url: "https://ap13-creative.company/",
               logo: "https://ap13-creative.company/logo.png",
               sameAs: ["https://www.linkedin.com/company/ap13-creative/"],
+            }),
+          }}
+        />
+        {/* WebSite (nice-to-have) */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              name: "AP13 Creative",
+              url: "https://ap13-creative.company/",
+              potentialAction: {
+                "@type": "SearchAction",
+                target: "https://ap13-creative.company/?q={search_term_string}",
+                "query-input": "required name=search_term_string",
+              },
             }),
           }}
         />
