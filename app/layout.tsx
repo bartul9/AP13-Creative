@@ -9,7 +9,7 @@ import { Footer } from "@/components/footer";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://ap13creative.com"),
+  metadataBase: new URL("https://ap13-creative.company/"),
   title: {
     default: "AP13 Creative - Digital Agency",
     template: "%s | AP13 Creative",
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://ap13creative.com",
+    url: "https://ap13-creative.company/",
     title: "AP13 Creative - Digital Agency",
     description:
       "AP13 Creative delivers high-quality web and mobile applications with precision, creativity, and style.",
