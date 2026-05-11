@@ -1,6 +1,6 @@
-import { ExternalLink, ArrowRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const projects = [
@@ -8,16 +8,16 @@ const projects = [
     title: "E-Commerce Platform",
     category: "Web Development",
     description:
-      "A modern e-commerce solution with real-time inventory, seamless checkout experience, and advanced analytics dashboard.",
+      "A modern commerce platform with live inventory, payment flows, and an analytics dashboard.",
     image: "/modern-ecommerce-platform-dark-theme.jpg",
     tags: ["Next.js", "Stripe", "PostgreSQL"],
-    results: "300% increase in conversion rate",
+    results: "300% conversion increase",
   },
   {
     title: "Fitness Tracking App",
     category: "Mobile Development",
     description:
-      "iOS and Android app for tracking workouts, nutrition, and health metrics with social features and AI-powered recommendations.",
+      "A cross-platform mobile app for workouts, nutrition, health metrics, and AI-guided recommendations.",
     image: "/fitness-tracking-app.png",
     tags: ["React Native", "AI/ML", "Firebase"],
     results: "50K+ active users",
@@ -26,25 +26,25 @@ const projects = [
     title: "SaaS Dashboard",
     category: "Web Development",
     description:
-      "Analytics dashboard with real-time data visualization, reporting tools, and team collaboration features.",
+      "Real-time analytics, reporting tools, and collaboration workflows for operational teams.",
     image: "/saas-analytics-dashboard-dark-ui.jpg",
-    tags: ["React", "D3.js", "WebSocket"],
-    results: "Real-time data for 10K+ users",
+    tags: ["React", "Charts", "WebSocket"],
+    results: "10K+ users supported",
   },
   {
     title: "AI Chatbot Platform",
     category: "AI Solutions",
     description:
-      "Intelligent chatbot platform with natural language processing capabilities and multi-channel support.",
+      "An intelligent chatbot platform with natural language workflows and multi-channel support.",
     image: "/ai-chatbot-interface-futuristic.jpg",
     tags: ["OpenAI", "Node.js", "MongoDB"],
-    results: "95% customer satisfaction",
+    results: "95% satisfaction",
   },
   {
     title: "Real Estate Portal",
     category: "Web Development",
     description:
-      "Property listing platform with advanced search, virtual tours, and integrated mortgage calculator.",
+      "A listing platform with search, property detail pages, virtual-tour support, and lead capture.",
     image: "/real-estate-property-portal-modern.jpg",
     tags: ["Next.js", "Maps API", "3D Tours"],
     results: "1M+ monthly visitors",
@@ -53,100 +53,99 @@ const projects = [
     title: "Restaurant Ordering App",
     category: "Mobile Development",
     description:
-      "Mobile app for food ordering with real-time tracking, payment integration, and loyalty rewards program.",
+      "A mobile ordering system with payments, live tracking, customer accounts, and loyalty flows.",
     image: "/restaurant-ordering-app.png",
     tags: ["React Native", "Stripe", "GPS"],
-    results: "40% increase in orders",
+    results: "40% more orders",
   },
 ];
 
 export default function ProjectsPage() {
   return (
-    <div className="relative">
-      {/* Hero Section */}
-      <section className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 pt-45">
-        <div className="max-w-4xl mx-auto space-y-2 text-center">
-          <h1 className="text-5xl sm:text-6xl font-bold text-balance animate-fade-in-up">
-            Our <span className="text-primary glow-cyan">Projects</span>
-          </h1>
-          <p className="text-xl text-muted-foreground text-pretty animate-fade-in-up animation-delay-200">
-            A showcase of our recent work and client success stories that speak
-            for themselves
-          </p>
-        </div>
-      </section>
-
-      {/* Projects Grid */}
-      <section className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <div className="max-w-7xl mx-auto space-y-12">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {projects.map((project, index) => (
-              <div
-                key={index}
-                className="bg-card border border-border rounded-2xl overflow-hidden hover:box-glow-cyan transition-all duration-300 flex flex-col animate-fade-in-up animation-delay-150"
-              >
-                <div className="relative h-56 overflow-hidden">
-                  <Image
-                    src={project.image || "/placeholder.svg"}
-                    alt={project.title}
-                    fill
-                    className="object-cover group-hover:scale-110 transition-transform duration-500"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-card via-card/50 to-transparent" />
-                </div>
-                <div className="p-6 space-y-4 flex-1 flex flex-col">
-                  <div className="text-xs font-semibold text-primary uppercase tracking-wider">
-                    {project.category}
-                  </div>
-                  <h3 className="text-2xl font-bold group-hover:text-primary transition-colors">
-                    {project.title}
-                  </h3>
-                  <p className="text-sm text-foreground/70 leading-relaxed flex-1">
-                    {project.description}
-                  </p>
-                  <div className="flex flex-wrap gap-2">
-                    {project.tags.map((tag, idx) => (
-                      <span
-                        key={idx}
-                        className="text-xs px-3 py-1 rounded-full bg-primary/10 text-primary/80"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                  <div className="pt-2 border-t border-border">
-                    <p className="text-sm font-semibold text-primary">
-                      {project.results}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            ))}
+    <div>
+      <section className="relative overflow-hidden border-b border-border pt-28 md:pt-32">
+        <Image
+          src="/saas-analytics-dashboard-dark-ui.jpg"
+          alt="SaaS dashboard interface"
+          fill
+          priority
+          className="object-cover opacity-20"
+          sizes="100vw"
+        />
+        <div className="absolute inset-0 bg-background/85" />
+        <div className="section-shell relative py-16 md:py-20">
+          <div className="max-w-4xl">
+            <p className="label-caps mb-4 text-primary">Projects</p>
+            <h1 className="text-5xl font-bold leading-[1.05] text-foreground sm:text-6xl">
+              Product work across web, mobile, SaaS, commerce, and AI.
+            </h1>
+            <p className="mt-6 max-w-2xl text-lg font-light leading-[1.55] text-foreground/80">
+              A representative view of the kinds of digital products AP13
+              Creative designs, builds, launches, and improves.
+            </p>
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 py-20 pb-32">
-        <div className="max-w-4xl mx-auto">
-          <div className="bg-gradient-to-br from-primary/20 via-card to-primary/10 border border-primary/30 rounded-3xl p-12 text-center space-y-6">
-            <h2 className="text-3xl sm:text-4xl font-bold">
-              Want to See Your Project{" "}
-              <span className="text-primary glow-cyan">Here?</span>
-            </h2>
-            <p className="text-lg text-foreground/80 max-w-2xl mx-auto">
-              Let's create something amazing together. Get in touch and let's
-              discuss your vision.
-            </p>
-            <Link href="/contact">
-              <Button
-                size="lg"
-                className="bg-primary text-primary-foreground hover:bg-primary/90 box-glow-cyan hover:box-glow-cyan-hover transition-all duration-300 text-lg px-8 py-6 rounded-full group"
-              >
-                Start Your Project
-                <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
-              </Button>
-            </Link>
+      <section className="section-shell py-20">
+        <div className="grid gap-px overflow-hidden border border-border bg-border md:grid-cols-2 lg:grid-cols-3">
+          {projects.map((project) => (
+            <article key={project.title} className="flex flex-col bg-card">
+              <div className="relative aspect-[16/10] border-b border-border bg-background">
+                <Image
+                  src={project.image}
+                  alt={project.title}
+                  fill
+                  className="object-cover"
+                  sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
+                />
+              </div>
+              <div className="flex flex-1 flex-col p-6">
+                <p className="label-caps text-primary">{project.category}</p>
+                <h2 className="mt-4 text-2xl font-bold leading-tight text-foreground">
+                  {project.title}
+                </h2>
+                <p className="mt-3 flex-1 text-sm font-light leading-relaxed text-foreground/70">
+                  {project.description}
+                </p>
+                <div className="mt-6 flex flex-wrap gap-2">
+                  {project.tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className="border border-border px-3 py-2 text-xs font-bold uppercase tracking-[0.08em] text-foreground/75"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+                <div className="mt-6 border-t border-border pt-4 text-sm font-bold text-primary">
+                  {project.results}
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="border-y border-border bg-card">
+        <div className="section-shell py-20">
+          <div className="grid gap-8 md:grid-cols-[1fr_auto] md:items-center">
+            <div>
+              <p className="label-caps mb-3 text-primary">Your project</p>
+              <h2 className="text-3xl font-bold leading-tight text-foreground md:text-4xl">
+                Want your product in the next batch of shipped work?
+              </h2>
+              <p className="body-light mt-4 max-w-2xl">
+                Bring the goal, audience, and constraints. We will help shape
+                the digital product around them.
+              </p>
+            </div>
+            <Button asChild size="lg">
+              <Link href="/contact">
+                Start a Project
+                <ArrowRight className="h-4 w-4" />
+              </Link>
+            </Button>
           </div>
         </div>
       </section>

@@ -1,13 +1,10 @@
-"use client";
-
-import { useEffect, useRef, useState } from "react";
 import {
-  Rocket,
-  Lightbulb,
-  Users,
-  TrendingUp,
   Award,
+  Lightbulb,
+  Rocket,
   Sparkle,
+  TrendingUp,
+  Users,
 } from "lucide-react";
 
 const milestones = [
@@ -15,127 +12,70 @@ const milestones = [
     year: "2020",
     title: "The Spark",
     description:
-      "Started shipping freelance projects and sharpening the React/JS craft. First real-world apps, first late-night deploys.",
+      "Started shipping freelance projects and sharpening the React and JavaScript craft through real-world launches.",
     icon: Sparkle,
   },
   {
     year: "2021",
     title: "First Paying Clients",
     description:
-      "Delivered production sites and small apps for EU clients. Built confidence and a solid reference base.",
+      "Delivered production sites and small apps for EU clients, building a stronger reference base.",
     icon: Rocket,
   },
   {
     year: "2022",
     title: "Stack Mastery",
     description:
-      "Doubled down on Next.js, React Native, Supabase, and modern UI systems. Built multiple MVPs and internal tools.",
+      "Doubled down on Next.js, React Native, Supabase, and modern UI systems for MVP delivery.",
     icon: TrendingUp,
   },
   {
     year: "2023",
     title: "Product Mindset",
     description:
-      "Prototyped ConsigliereX, LifeFlow, and event/messaging features. Learned to balance client work with product bets.",
+      "Balanced client work with product prototypes across messaging, event, and productivity workflows.",
     icon: Award,
   },
   {
     year: "2024",
     title: "AP13 Idea & Brand",
     description:
-      "Defined AP13 Creative: name, identity, and mission. Early logo/website, first retainers, and a clear agency direction.",
+      "Defined the AP13 Creative identity, mission, early website, retainers, and agency direction.",
     icon: Lightbulb,
   },
   {
     year: "2025",
     title: "Small Team, Bigger Moves",
     description:
-      "Formed a compact core team (~4). Launching polished web & mobile work for EU clients; scaling AI-powered solutions.",
+      "Formed a compact core team and scaled polished web, mobile, and AI-powered solutions.",
     icon: Users,
   },
 ];
 
 export function JourneyTimeline() {
-  const [visibleItems, setVisibleItems] = useState<Set<number>>(new Set());
-  const itemRefs = useRef<(HTMLDivElement | null)[]>([]);
-
-  useEffect(() => {
-    const observers = itemRefs.current.map((ref, index) => {
-      if (!ref) return null;
-
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              setVisibleItems((prev) => new Set(prev).add(index));
-            }
-          });
-        },
-        { threshold: 0.2 }
-      );
-
-      observer.observe(ref);
-      return observer;
-    });
-
-    return () => {
-      observers.forEach((observer) => observer?.disconnect());
-    };
-  }, []);
-
   return (
-    <div className="relative max-w-5xl mx-auto">
-      {/* Timeline line */}
-      <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary/20 via-primary/50 to-primary/20" />
-
-      <div className="space-y-16">
-        {milestones.map((milestone, index) => {
+    <div className="mx-auto max-w-5xl border-y border-border">
+      <div className="divide-y divide-border">
+        {milestones.map((milestone) => {
           const Icon = milestone.icon;
-          const isVisible = visibleItems.has(index);
-          const isLeft = index % 2 === 0;
 
           return (
             <div
-              key={index}
-              ref={(el) => {
-                itemRefs.current[index] = el;
-              }}
-              className={`relative flex items-center ${
-                isLeft ? "md:flex-row" : "md:flex-row-reverse"
-              } gap-8`}
+              key={milestone.year}
+              className="grid gap-6 py-8 md:grid-cols-[160px_64px_1fr] md:items-start"
             >
-              {/* Content */}
-              <div
-                className={`flex-1 ${
-                  isLeft ? "md:text-right md:pr-12" : "md:text-left md:pl-12"
-                } pl-20 md:pl-0 transition-all duration-700 ${
-                  isVisible
-                    ? "opacity-100 translate-y-0"
-                    : "opacity-0 translate-y-8"
-                }`}
-              >
-                <div className="inline-block">
-                  <div className="text-sm font-bold text-primary mb-2">
-                    {milestone.year}
-                  </div>
-                  <h3 className="text-2xl font-bold mb-3">{milestone.title}</h3>
-                  <p className="text-foreground/70 leading-relaxed max-w-md">
-                    {milestone.description}
-                  </p>
-                </div>
+              <div className="label-caps text-primary">{milestone.year}</div>
+              <div className="flex size-12 items-center justify-center rounded-full border border-primary text-primary md:mx-auto">
+                <Icon className="h-5 w-5" />
               </div>
-
-              {/* Icon */}
-              <div
-                className={`absolute left-0 md:left-1/2 md:-translate-x-1/2 w-16 h-16 rounded-full bg-card border-2 border-primary flex items-center justify-center transition-all duration-700 ${
-                  isVisible ? "scale-100 rotate-0" : "scale-0 rotate-180"
-                }`}
-              >
-                <Icon className="w-7 h-7 text-primary" />
+              <div>
+                <h3 className="text-2xl font-bold leading-tight text-foreground">
+                  {milestone.title}
+                </h3>
+                <p className="mt-3 max-w-2xl text-base font-light leading-relaxed text-foreground/75">
+                  {milestone.description}
+                </p>
               </div>
-
-              {/* Spacer for layout */}
-              <div className="flex-1 hidden md:block" />
             </div>
           );
         })}

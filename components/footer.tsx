@@ -1,13 +1,33 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Mail, MapPin, Linkedin, Github, Twitter } from "lucide-react";
+import { Linkedin, Mail, MapPin } from "lucide-react";
+
+const linkGroups = [
+  {
+    title: "Company",
+    links: [
+      { href: "/", label: "Home" },
+      { href: "/about", label: "About" },
+      { href: "/projects", label: "Projects" },
+      { href: "/careers", label: "Careers" },
+    ],
+  },
+  {
+    title: "Services",
+    links: [
+      { href: "/services", label: "Web Development" },
+      { href: "/services", label: "Mobile Apps" },
+      { href: "/services", label: "UI/UX Design" },
+      { href: "/services", label: "AI Solutions" },
+    ],
+  },
+];
 
 export function Footer() {
   return (
-    <footer className="relative border-t border-border bg-background/50 backdrop-blur-sm">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
-          {/* Brand Section */}
+    <footer className="border-t border-border bg-card">
+      <div className="section-shell py-16">
+        <div className="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-4">
           <div className="space-y-4">
             <Image
               src="/logo1.png"
@@ -16,7 +36,7 @@ export function Footer() {
               height={70}
               className="h-8 w-auto"
             />
-            <p className="text-sm text-foreground/70 leading-relaxed">
+            <p className="text-sm font-light leading-relaxed text-foreground/70">
               Turning your vision into high-quality digital reality with speed,
               precision, and creativity.
             </p>
@@ -25,95 +45,44 @@ export function Footer() {
                 href="https://www.linkedin.com/company/ap13-creative"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-9 h-9 rounded-lg bg-card border border-border flex items-center justify-center hover:bg-primary/10 hover:border-primary transition-all"
+                aria-label="AP13 Creative on LinkedIn"
+                className="flex size-10 items-center justify-center rounded-full border border-border bg-background transition-colors hover:border-primary hover:text-primary"
               >
-                <Linkedin className="w-4 h-4 text-foreground/70 hover:text-primary" />
+                <Linkedin className="h-4 w-4" />
               </a>
             </div>
           </div>
 
-          {/* Quick Links */}
-          <div className="space-y-4">
-            <h3 className="text-sm font-bold uppercase tracking-wider text-foreground">
-              Quick Links
-            </h3>
-            <ul className="space-y-3">
-              <li>
-                <Link
-                  href="/"
-                  className="text-sm text-foreground/70 hover:text-primary transition-colors"
-                >
-                  Home
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/about"
-                  className="text-sm text-foreground/70 hover:text-primary transition-colors"
-                >
-                  About
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/services"
-                  className="text-sm text-foreground/70 hover:text-primary transition-colors"
-                >
-                  Services
-                </Link>
-              </li>
-              {/*               <li>
-                <Link
-                  href="/projects"
-                  className="text-sm text-foreground/70 hover:text-primary transition-colors"
-                >
-                  Projects
-                </Link>
-              </li> */}
-              <li>
-                <Link
-                  href="/contact"
-                  className="text-sm text-foreground/70 hover:text-primary transition-colors"
-                >
-                  Contact
-                </Link>
-              </li>
-              {/*          <li>
-                <Link href="/careers" className="text-sm text-foreground/70 hover:text-primary transition-colors">
-                  Careers
-                </Link>
-              </li> */}
-            </ul>
-          </div>
+          {linkGroups.map((group) => (
+            <div key={group.title} className="space-y-4">
+              <h3 className="label-caps text-foreground">{group.title}</h3>
+              <ul className="space-y-3">
+                {group.links.map((item) => (
+                  <li key={`${group.title}-${item.label}`}>
+                    <Link
+                      href={item.href}
+                      className="text-sm font-light text-foreground/70 transition-colors hover:text-primary"
+                    >
+                      {item.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
 
-          {/* Services */}
           <div className="space-y-4">
-            <h3 className="text-sm font-bold uppercase tracking-wider text-foreground">
-              Services
-            </h3>
+            <h3 className="label-caps text-foreground">Contact</h3>
             <ul className="space-y-3">
-              <li className="text-sm text-foreground/70">Web Development</li>
-              <li className="text-sm text-foreground/70">Mobile Apps</li>
-              <li className="text-sm text-foreground/70">UI/UX Design</li>
-              <li className="text-sm text-foreground/70">AI Solutions</li>
-            </ul>
-          </div>
-
-          {/* Contact Info */}
-          <div className="space-y-4">
-            <h3 className="text-sm font-bold uppercase tracking-wider text-foreground">
-              Contact
-            </h3>
-            <ul className="space-y-3">
-              <li className="flex items-start gap-2 text-sm text-foreground/70">
-                <MapPin className="w-4 h-4 mt-0.5 flex-shrink-0 text-primary" />
+              <li className="flex items-start gap-2 text-sm font-light text-foreground/70">
+                <MapPin className="mt-0.5 h-4 w-4 flex-shrink-0 text-primary" />
                 <span>Split, Croatia</span>
               </li>
               <li className="flex items-start gap-2 text-sm">
-                <Mail className="w-4 h-4 mt-0.5 flex-shrink-0 text-primary" />
+                <Mail className="mt-0.5 h-4 w-4 flex-shrink-0 text-primary" />
                 <a
                   href="mailto:bartul123@outlook.com"
-                  className="text-foreground/70 hover:text-primary transition-colors"
+                  className="font-light text-foreground/70 transition-colors hover:text-primary"
                 >
                   bartul123@outlook.com
                 </a>
@@ -122,11 +91,16 @@ export function Footer() {
           </div>
         </div>
 
-        {/* Bottom Bar */}
-        <div className="mt-12 pt-8 border-t border-border flex flex-col sm:flex-row justify-between items-center gap-4">
-          <p className="text-sm text-foreground/60">
-            © 2025 AP13 Creative. All rights reserved.
+        <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-border pt-8 sm:flex-row">
+          <p className="text-sm font-light text-foreground/60">
+            &copy; 2025 AP13 Creative. All rights reserved.
           </p>
+          <Link
+            href="/contact"
+            className="label-caps text-primary transition-colors hover:text-primary/80"
+          >
+            Contact AP13
+          </Link>
         </div>
       </div>
     </footer>

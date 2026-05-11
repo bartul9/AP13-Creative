@@ -1,12 +1,41 @@
 "use client";
 
 import type React from "react";
-
+import { useState } from "react";
+import Image from "next/image";
+import { Clock, Linkedin, Mail, MapPin, Send } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Mail, MapPin, Linkedin, Clock, Send } from "lucide-react";
-import { useState } from "react";
+
+const contactItems = [
+  {
+    icon: MapPin,
+    title: "Location",
+    value: "Split, Croatia",
+    note: "Working globally with remote-first delivery.",
+  },
+  {
+    icon: Mail,
+    title: "Email",
+    value: "bartul123@outlook.com",
+    href: "mailto:bartul123@outlook.com",
+    note: "Send project scope, timelines, or questions.",
+  },
+  {
+    icon: Linkedin,
+    title: "LinkedIn",
+    value: "Connect with AP13 Creative",
+    href: "https://www.linkedin.com/company/ap13-creative",
+    note: "Follow updates and company activity.",
+  },
+  {
+    icon: Clock,
+    title: "Response",
+    value: "Within 24 hours",
+    note: "We respond fastest when scope and deadline are included.",
+  },
+];
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -15,158 +44,154 @@ export default function ContactPage() {
     message: "",
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log("Form submitted:", formData);
+  const handleSubmit = (event: React.FormEvent) => {
+    event.preventDefault();
+
+    const subject = encodeURIComponent(`Project inquiry from ${formData.name}`);
+    const body = encodeURIComponent(
+      `Name: ${formData.name}\nEmail: ${formData.email}\n\n${formData.message}`
+    );
+
+    window.location.href = `mailto:bartul123@outlook.com?subject=${subject}&body=${body}`;
   };
 
   return (
-    <div className="relative">
-      {/* Hero Section */}
-      <section className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 pt-45">
-        <div className="max-w-4xl mx-auto space-y-2 text-pretty text-center">
-          <h1 className="text-5xl sm:text-6xl font-bold text-balance animate-fade-in-up">
-            Let's <span className="text-primary glow-cyan">Connect</span>
-          </h1>
-          <p className="text-xl text-muted-foreground text-pretty animate-fade-in-up animation-delay-200">
-            Ready to bring your vision to life? Get in touch with us today and
-            let's create something amazing together.
-          </p>
+    <div>
+      <section className="relative overflow-hidden border-b border-border pt-28 md:pt-32">
+        <Image
+          src="/restaurant-ordering-app.png"
+          alt="Mobile ordering app interface"
+          fill
+          priority
+          className="object-cover opacity-20"
+          sizes="100vw"
+        />
+        <div className="absolute inset-0 bg-background/85" />
+        <div className="section-shell relative py-16 md:py-20">
+          <div className="max-w-4xl">
+            <p className="label-caps mb-4 text-primary">Contact</p>
+            <h1 className="text-5xl font-bold leading-[1.05] text-foreground sm:text-6xl">
+              Tell us what you want to build.
+            </h1>
+            <p className="mt-6 max-w-2xl text-lg font-light leading-[1.55] text-foreground/80">
+              Share the product goal, timeline, budget range, and any existing
+              assets. We will reply with the next practical step.
+            </p>
+          </div>
         </div>
       </section>
 
-      {/* Contact Section */}
-      <section className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-32">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            {/* Contact Form */}
-            <div className="bg-card border border-border rounded-3xl p-8 md:p-10 space-y-8 hover:box-glow-cyan transition-all duration-300 animate-fade-in-up">
+      <section className="section-shell py-20">
+        <div className="grid gap-10 lg:grid-cols-[1.05fr_0.95fr]">
+          <div className="border border-border bg-card p-6 md:p-8 lg:p-10">
+            <div className="mb-8">
+              <p className="label-caps mb-3 text-primary">Project inquiry</p>
+              <h2 className="text-3xl font-bold leading-tight text-foreground">
+                Send a message.
+              </h2>
+              <p className="body-light mt-3">
+                The form opens your email client with the message prepared.
+              </p>
+            </div>
+
+            <form onSubmit={handleSubmit} className="space-y-6">
               <div className="space-y-2">
-                <h2 className="text-3xl font-bold">Send us a message</h2>
-                <p className="text-foreground/70">
-                  Fill out the form and we'll get back to you within 24 hours
-                </p>
+                <label htmlFor="name" className="label-caps text-foreground">
+                  Name
+                </label>
+                <Input
+                  id="name"
+                  placeholder="Your full name"
+                  value={formData.name}
+                  onChange={(event) =>
+                    setFormData({ ...formData, name: event.target.value })
+                  }
+                  required
+                />
               </div>
 
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="space-y-2">
-                  <label htmlFor="name" className="text-sm font-medium">
-                    Name *
-                  </label>
-                  <Input
-                    id="name"
-                    placeholder="Your full name"
-                    value={formData.name}
-                    onChange={(e) =>
-                      setFormData({ ...formData, name: e.target.value })
-                    }
-                    required
-                    className="bg-background border-border h-12"
-                  />
-                </div>
+              <div className="space-y-2">
+                <label htmlFor="email" className="label-caps text-foreground">
+                  Email
+                </label>
+                <Input
+                  id="email"
+                  type="email"
+                  placeholder="your@email.com"
+                  value={formData.email}
+                  onChange={(event) =>
+                    setFormData({ ...formData, email: event.target.value })
+                  }
+                  required
+                />
+              </div>
 
-                <div className="space-y-2">
-                  <label htmlFor="email" className="text-sm font-medium">
-                    Email *
-                  </label>
-                  <Input
-                    id="email"
-                    type="email"
-                    placeholder="your@email.com"
-                    value={formData.email}
-                    onChange={(e) =>
-                      setFormData({ ...formData, email: e.target.value })
-                    }
-                    required
-                    className="bg-background border-border h-12"
-                  />
-                </div>
-
-                <div className="space-y-2">
-                  <label htmlFor="message" className="text-sm font-medium">
-                    Message *
-                  </label>
-                  <Textarea
-                    id="message"
-                    placeholder="Tell us about your project..."
-                    value={formData.message}
-                    onChange={(e) =>
-                      setFormData({ ...formData, message: e.target.value })
-                    }
-                    required
-                    rows={6}
-                    className="bg-background border-border resize-none"
-                  />
-                </div>
-
-                <Button
-                  type="submit"
-                  className="w-full bg-primary text-primary-foreground hover:bg-primary/90 box-glow-cyan hover:box-glow-cyan-hover transition-all duration-300 h-12 text-base group"
+              <div className="space-y-2">
+                <label
+                  htmlFor="message"
+                  className="label-caps text-foreground"
                 >
-                  Send Message
-                  <Send className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                </Button>
-              </form>
-            </div>
-
-            {/* Contact Information */}
-            <div className="space-y-8">
-              <div className="bg-card border border-border rounded-3xl p-8 space-y-6 hover:box-glow-cyan transition-all duration-300 animate-fade-in-up animation-delay-150">
-                <h2 className="text-2xl font-bold">Get in touch</h2>
-                <div className="space-y-6">
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
-                      <MapPin className="w-6 h-6 text-primary" />
-                    </div>
-                    <div>
-                      <div className="font-semibold mb-1 text-lg">Location</div>
-                      <div className="text-foreground/70">Split, Croatia</div>
-                      <div className="text-sm text-foreground/60">
-                        Working globally, serving clients worldwide
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
-                      <Mail className="w-6 h-6 text-primary" />
-                    </div>
-                    <div>
-                      <div className="font-semibold mb-1 text-lg">Email</div>
-                      <a
-                        href="mailto:bartul123@outlook.com"
-                        className="text-primary hover:underline hover:text-primary/80 transition-colors"
-                      >
-                        bartul123@outlook.com
-                      </a>
-                      <div className="text-sm text-foreground/60 mt-1">
-                        We'll respond within 24 hours
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
-                      <Linkedin className="w-6 h-6 text-primary" />
-                    </div>
-                    <div>
-                      <div className="font-semibold mb-1 text-lg">LinkedIn</div>
-                      <a
-                        href="https://www.linkedin.com/company/ap13-creative"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-primary hover:underline hover:text-primary/80 transition-colors"
-                      >
-                        Connect with us
-                      </a>
-                      <div className="text-sm text-foreground/60 mt-1">
-                        Follow our latest updates
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                  Message
+                </label>
+                <Textarea
+                  id="message"
+                  placeholder="Tell us about your project, timeline, and goals."
+                  value={formData.message}
+                  onChange={(event) =>
+                    setFormData({ ...formData, message: event.target.value })
+                  }
+                  required
+                  rows={7}
+                />
               </div>
-            </div>
+
+              <Button type="submit" className="w-full">
+                Send Message
+                <Send className="h-4 w-4" />
+              </Button>
+            </form>
+          </div>
+
+          <div className="grid gap-px overflow-hidden border border-border bg-border sm:grid-cols-2 lg:grid-cols-1">
+            {contactItems.map((item) => {
+              const Icon = item.icon;
+              const content = (
+                <>
+                  <div className="flex size-12 items-center justify-center rounded-full border border-primary text-primary">
+                    <Icon className="h-5 w-5" />
+                  </div>
+                  <div>
+                    <h3 className="label-caps text-primary">{item.title}</h3>
+                    <div className="mt-2 text-lg font-bold leading-tight text-foreground">
+                      {item.value}
+                    </div>
+                    <p className="mt-2 text-sm font-light leading-relaxed text-foreground/70">
+                      {item.note}
+                    </p>
+                  </div>
+                </>
+              );
+
+              return item.href ? (
+                <a
+                  key={item.title}
+                  href={item.href}
+                  target={item.href.startsWith("http") ? "_blank" : undefined}
+                  rel={
+                    item.href.startsWith("http")
+                      ? "noopener noreferrer"
+                      : undefined
+                  }
+                  className="grid gap-5 bg-card p-6 transition-colors hover:text-primary"
+                >
+                  {content}
+                </a>
+              ) : (
+                <div key={item.title} className="grid gap-5 bg-card p-6">
+                  {content}
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>

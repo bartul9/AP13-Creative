@@ -1,14 +1,16 @@
+import Image from "next/image";
+import Link from "next/link";
 import {
-  MapPin,
+  ArrowRight,
   Briefcase,
   Clock,
   DollarSign,
-  Heart,
-  Zap,
-  Users,
   Globe,
+  Heart,
+  MapPin,
+  Users,
+  Zap,
 } from "lucide-react";
-import Link from "next/link";
 import { Button } from "@/components/ui/button";
 
 const openings = [
@@ -18,7 +20,7 @@ const openings = [
     location: "Remote",
     salary: "$80k - $120k",
     description:
-      "We're looking for an experienced full-stack developer to join our team and work on exciting client projects using Next.js, React, and modern technologies.",
+      "Own production-grade client work across Next.js, React, Node.js, APIs, and deployment workflows.",
     requirements: [
       "5+ years of experience with React and Node.js",
       "Strong TypeScript skills",
@@ -32,11 +34,11 @@ const openings = [
     location: "Remote",
     salary: "$60k - $90k",
     description:
-      "Create stunning user interfaces and craft delightful user experiences for web and mobile applications.",
+      "Design practical product interfaces from discovery through prototype, design system, and implementation support.",
     requirements: [
       "3+ years of UI/UX design experience",
       "Proficiency in Figma and design tools",
-      "Strong portfolio showcasing your work",
+      "Strong portfolio showcasing product work",
       "Understanding of modern design principles",
     ],
   },
@@ -46,11 +48,11 @@ const openings = [
     location: "Remote",
     salary: "$70k - $100k",
     description:
-      "Develop native and cross-platform mobile applications for iOS and Android using React Native.",
+      "Build reliable cross-platform mobile applications for iOS and Android with release-ready polish.",
     requirements: [
       "3+ years of React Native experience",
       "Published apps on App Store and Google Play",
-      "Knowledge of native iOS/Android development",
+      "Knowledge of native iOS and Android development",
       "Experience with mobile app architecture",
     ],
   },
@@ -60,12 +62,12 @@ const openings = [
     location: "Remote",
     salary: "$50k - $70k",
     description:
-      "Build responsive, performant web applications using React, Next.js, and modern CSS frameworks.",
+      "Turn designs into responsive, performant web interfaces using React, Next.js, and modern CSS.",
     requirements: [
       "2+ years of React experience",
       "Strong HTML, CSS, and JavaScript skills",
       "Experience with Tailwind CSS or similar",
-      "Attention to detail and pixel-perfect implementation",
+      "Attention to detail and production quality",
     ],
   },
 ];
@@ -73,180 +75,176 @@ const openings = [
 const benefits = [
   {
     icon: Globe,
-    title: "Work From Anywhere",
+    title: "Remote First",
     description:
-      "100% remote-first company. Work from wherever you're most productive.",
+      "Work from where you are productive while staying close to project communication.",
   },
   {
     icon: Clock,
     title: "Flexible Hours",
-    description: "Choose your own schedule and work when you're at your best.",
+    description:
+      "Plan deep work around clear delivery expectations and team availability.",
   },
   {
     icon: Zap,
-    title: "Growth Opportunities",
+    title: "Growth Work",
     description:
-      "Learn new technologies and grow your skills with every project.",
+      "Build across products, stacks, and industries instead of repeating one narrow workflow.",
   },
   {
     icon: Users,
-    title: "Collaborative Team",
-    description: "Work with talented professionals from around the world.",
+    title: "Small Team",
+    description:
+      "Collaborate directly with people responsible for decisions, design, and delivery.",
   },
   {
     icon: DollarSign,
     title: "Competitive Pay",
-    description: "Fair compensation that reflects your skills and experience.",
+    description:
+      "Compensation is aligned with skill level, responsibility, and project impact.",
   },
   {
     icon: Heart,
-    title: "Work-Life Balance",
-    description: "We value your time and well-being. No overtime culture.",
+    title: "Healthy Pace",
+    description:
+      "We value focus, sustainable output, and clean handoffs over constant urgency.",
   },
 ];
 
 export default function CareersPage() {
   return (
-    <div className="relative">
-      {/* Hero Section */}
-      <section className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 pt-45">
-        <div className="max-w-4xl mx-auto space-y-2 text-center">
-          <h1 className="text-5xl sm:text-6xl font-bold text-balance animate-fade-in-up">
-            Join the{" "}
-            <span className="text-primary glow-cyan">Creative Force</span>
-          </h1>
-          <p className="text-xl text-muted-foreground text-pretty animate-fade-in-up animation-delay-200">
-            Be part of a team that's shaping the future of digital experiences.
-            Work on exciting projects with talented people from around the
-            world.
+    <div>
+      <section className="relative overflow-hidden border-b border-border pt-28 md:pt-32">
+        <Image
+          src="/fitness-tracking-app.png"
+          alt="Mobile product interface"
+          fill
+          priority
+          className="object-cover opacity-20"
+          sizes="100vw"
+        />
+        <div className="absolute inset-0 bg-background/85" />
+        <div className="section-shell relative py-16 md:py-20">
+          <div className="max-w-4xl">
+            <p className="label-caps mb-4 text-primary">Careers</p>
+            <h1 className="text-5xl font-bold leading-[1.05] text-foreground sm:text-6xl">
+              Join a small team building serious digital products.
+            </h1>
+            <p className="mt-6 max-w-2xl text-lg font-light leading-[1.55] text-foreground/80">
+              AP13 Creative works with focused specialists who care about
+              product thinking, clean execution, and direct collaboration.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="section-shell py-20">
+        <div className="mb-12 grid gap-6 md:grid-cols-[0.8fr_1fr] md:items-end">
+          <div>
+            <p className="label-caps mb-3 text-primary">Benefits</p>
+            <h2 className="text-4xl font-bold leading-tight text-foreground md:text-5xl">
+              Built for focused work.
+            </h2>
+          </div>
+          <p className="body-light max-w-2xl md:justify-self-end">
+            The team structure is intentionally compact, remote-friendly, and
+            delivery-oriented.
           </p>
         </div>
-      </section>
 
-      {/* Why Join Us */}
-      <section className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <div className="max-w-6xl mx-auto space-y-12">
-          <div className="text-center space-y-4">
-            <h2 className="text-4xl font-bold">
-              Why <span className="text-primary glow-cyan">AP13 Creative?</span>
-            </h2>
-            <p className="text-lg text-muted-foreground">
-              Benefits and perks of joining our team
-            </p>
-          </div>
+        <div className="grid gap-px overflow-hidden border border-border bg-border md:grid-cols-2 lg:grid-cols-3">
+          {benefits.map((benefit) => {
+            const Icon = benefit.icon;
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {benefits.map((benefit, index) => {
-              const Icon = benefit.icon;
-              return (
-                <div
-                  key={index}
-                  className="bg-card border border-border rounded-2xl p-6 hover:box-glow-cyan transition-all duration-300 animate-fade-in-up animation-delay-150"
-                >
-                  <Icon className="w-10 h-10 text-primary mb-4" />
-                  <h3 className="text-xl font-bold mb-2">{benefit.title}</h3>
-                  <p className="text-sm text-foreground/70 leading-relaxed">
-                    {benefit.description}
-                  </p>
-                </div>
-              );
-            })}
-          </div>
+            return (
+              <article key={benefit.title} className="bg-card p-6">
+                <Icon className="h-8 w-8 text-primary" />
+                <h3 className="mt-6 text-xl font-bold leading-tight text-foreground">
+                  {benefit.title}
+                </h3>
+                <p className="mt-3 text-sm font-light leading-relaxed text-foreground/70">
+                  {benefit.description}
+                </p>
+              </article>
+            );
+          })}
         </div>
       </section>
 
-      {/* Open Positions */}
-      <section className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <div className="max-w-5xl mx-auto space-y-12">
-          <div className="text-center space-y-4">
-            <h2 className="text-4xl font-bold">
-              Open <span className="text-primary glow-cyan">Positions</span>
+      <section className="border-y border-border bg-card">
+        <div className="section-shell py-20">
+          <div className="mb-12">
+            <p className="label-caps mb-3 text-primary">Open positions</p>
+            <h2 className="text-4xl font-bold leading-tight text-foreground md:text-5xl">
+              Current roles.
             </h2>
-            <p className="text-lg text-muted-foreground">
-              Find your perfect role
-            </p>
           </div>
 
-          <div className="space-y-6">
-            {openings.map((opening, index) => (
-              <div
-                key={index}
-                className="bg-card border border-border rounded-2xl p-8 hover:box-glow-cyan transition-all duration-300 animate-fade-in-up animation-delay-150"
+          <div className="space-y-4">
+            {openings.map((opening) => (
+              <article
+                key={opening.title}
+                className="grid gap-6 border border-border bg-background p-6 lg:grid-cols-[1fr_auto] lg:items-start"
               >
-                <div className="space-y-6">
-                  <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-4">
-                    <div className="space-y-3 flex-1">
-                      <h3 className="text-2xl font-bold">{opening.title}</h3>
-                      <div className="flex flex-wrap gap-4 text-sm text-muted-foreground">
-                        <div className="flex items-center gap-2">
-                          <Briefcase className="w-4 h-4 text-primary" />
-                          {opening.type}
-                        </div>
-                        <div className="flex items-center gap-2">
-                          <MapPin className="w-4 h-4 text-primary" />
-                          {opening.location}
-                        </div>
-                        <div className="flex items-center gap-2">
-                          <DollarSign className="w-4 h-4 text-primary" />
-                          {opening.salary}
-                        </div>
-                      </div>
-                    </div>
-                    <Link href="/contact">
-                      <Button className="bg-primary text-primary-foreground hover:bg-primary/90 whitespace-nowrap">
-                        Apply Now
-                      </Button>
-                    </Link>
+                <div>
+                  <h3 className="text-2xl font-bold leading-tight text-foreground">
+                    {opening.title}
+                  </h3>
+                  <div className="mt-4 flex flex-wrap gap-x-6 gap-y-3 text-sm font-light text-foreground/70">
+                    <span className="flex items-center gap-2">
+                      <Briefcase className="h-4 w-4 text-primary" />
+                      {opening.type}
+                    </span>
+                    <span className="flex items-center gap-2">
+                      <MapPin className="h-4 w-4 text-primary" />
+                      {opening.location}
+                    </span>
+                    <span className="flex items-center gap-2">
+                      <DollarSign className="h-4 w-4 text-primary" />
+                      {opening.salary}
+                    </span>
                   </div>
-
-                  <p className="text-foreground/80 leading-relaxed">
+                  <p className="body-light mt-5 max-w-3xl">
                     {opening.description}
                   </p>
-
-                  <div className="space-y-2">
-                    <h4 className="font-semibold text-foreground/90">
-                      Requirements:
-                    </h4>
-                    <ul className="space-y-2">
-                      {opening.requirements.map((req, idx) => (
-                        <li
-                          key={idx}
-                          className="flex items-start gap-2 text-sm text-foreground/70"
-                        >
-                          <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
-                          {req}
-                        </li>
-                      ))}
-                    </ul>
+                  <div className="mt-6 grid gap-3 sm:grid-cols-2">
+                    {opening.requirements.map((requirement) => (
+                      <div
+                        key={requirement}
+                        className="border-b border-border pb-3 text-sm font-light text-foreground/70"
+                      >
+                        {requirement}
+                      </div>
+                    ))}
                   </div>
                 </div>
-              </div>
+                <Button asChild>
+                  <Link href="/contact">
+                    Apply Now
+                    <ArrowRight className="h-4 w-4" />
+                  </Link>
+                </Button>
+              </article>
             ))}
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 py-20 pb-32">
-        <div className="max-w-4xl mx-auto">
-          <div className="bg-gradient-to-br from-primary/20 via-card to-primary/10 border border-primary/30 rounded-3xl p-12 text-center space-y-6">
-            <h2 className="text-3xl sm:text-4xl font-bold">
-              Don't See a Perfect Fit?
+      <section className="section-shell py-20">
+        <div className="grid gap-8 border border-border bg-card p-8 md:grid-cols-[1fr_auto] md:items-center md:p-10">
+          <div>
+            <p className="label-caps mb-3 text-primary">Open application</p>
+            <h2 className="text-3xl font-bold leading-tight text-foreground md:text-4xl">
+              Do not see the exact role?
             </h2>
-            <p className="text-lg text-foreground/80 max-w-2xl mx-auto">
-              We're always interested in meeting talented people. Send us your
-              portfolio and tell us what makes you special.
+            <p className="body-light mt-4 max-w-2xl">
+              Send your portfolio, GitHub, or product work and explain where
+              you would add value.
             </p>
-            <Link href="/contact">
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-primary text-primary hover:bg-primary/10 bg-transparent text-lg px-8 py-6 rounded-full"
-              >
-                Get in Touch
-              </Button>
-            </Link>
           </div>
+          <Button asChild size="lg" variant="outline">
+            <Link href="/contact">Get in Touch</Link>
+          </Button>
         </div>
       </section>
     </div>

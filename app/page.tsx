@@ -1,151 +1,165 @@
+import Image from "next/image";
 import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Sparkles } from "lucide-react";
 import { JourneyTimeline } from "@/components/journey-timeline";
 import { StatsShowcase } from "@/components/stats-showcase";
 
+const process = [
+  {
+    step: "01",
+    title: "Discovery",
+    description:
+      "Clarify the product goal, audience, risks, technical scope, and launch path before design or code starts.",
+  },
+  {
+    step: "02",
+    title: "Design",
+    description:
+      "Translate the product strategy into flows, screens, components, and a usable interface system.",
+  },
+  {
+    step: "03",
+    title: "Development",
+    description:
+      "Build the application with modern React, Next.js, mobile, API, and database foundations.",
+  },
+  {
+    step: "04",
+    title: "Launch",
+    description:
+      "Prepare production, validate performance, deploy confidently, and stay available after release.",
+  },
+];
+
+const featuredServices = [
+  "Web applications",
+  "Mobile apps",
+  "Product design",
+  "AI integrations",
+];
+
 export default function HomePage() {
   return (
-    <div className="relative">
-      {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        <main className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 py-32">
-          <div className="max-w-5xl mx-auto text-center space-y-8">
-            <div className="inline-block animate-fade-in">
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-sm text-primary mb-6">
-                <span>Crafting Digital Excellence</span>
+    <div>
+      <section className="relative overflow-hidden border-b border-border pt-28 md:pt-32">
+        <Image
+          src="/saas-analytics-dashboard-dark-ui.jpg"
+          alt="Modern analytics dashboard interface"
+          fill
+          priority
+          className="object-cover opacity-25"
+          sizes="100vw"
+        />
+        <div className="absolute inset-0 bg-background/80" />
+
+        <div className="section-shell relative pb-16 md:pb-20">
+          <div className="grid min-h-[calc(100svh-12rem)] items-end gap-12 md:grid-cols-[1.05fr_0.95fr]">
+            <div className="max-w-4xl">
+              <p className="label-caps mb-5 text-primary">
+                Digital product studio
+              </p>
+              <h1 className="text-5xl font-bold leading-[1.05] text-foreground sm:text-6xl lg:text-7xl">
+                AP13 Creative
+              </h1>
+              <p className="mt-6 max-w-2xl text-lg font-light leading-[1.55] text-foreground/80 sm:text-xl">
+                We design and build web, mobile, and AI-powered software for
+                teams that need polished products shipped with speed and
+                engineering discipline.
+              </p>
+              <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+                <Button asChild size="lg">
+                  <Link href="/contact">
+                    Start a Project
+                    <ArrowRight className="h-4 w-4" />
+                  </Link>
+                </Button>
+                <Button asChild size="lg" variant="outline">
+                  <Link href="/projects">View Work</Link>
+                </Button>
               </div>
             </div>
 
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-balance leading-tight animate-fade-in-up">
-              Turning your vision into{" "}
-              <span className="text-primary glow-cyan bg-gradient-to-r from-primary to-cyan-400 bg-clip-text text-transparent">
-                high-quality digital reality
-              </span>
-            </h1>
-
-            <p className="text-xl sm:text-2xl text-foreground/80 text-pretty max-w-3xl mx-auto leading-relaxed animate-fade-in-up animation-delay-200">
-              We build web and mobile apps fast, with precision, creativity, and
-              style. Your success is our mission.
-            </p>
-
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-8 animate-fade-in-up animation-delay-400">
-              <Link href="/contact">
-                <Button
-                  size="lg"
-                  className="bg-primary text-primary-foreground hover:bg-primary/90 box-glow-cyan hover:box-glow-cyan-hover transition-all duration-300 text-lg px-8 py-6 rounded-full group"
+            <div className="grid gap-3 border-y border-border py-6 md:border-l md:border-y-0 md:py-0 md:pl-8">
+              {featuredServices.map((service) => (
+                <Link
+                  key={service}
+                  href="/services"
+                  className="label-caps flex items-center justify-between border-b border-border py-4 text-foreground transition-colors last:border-b-0 hover:text-primary"
                 >
-                  Start Your Project
-                  <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
-                </Button>
-              </Link>
-            </div>
-            <div className="absolute inset-x-0 top-175 mx-auto h-64 w-[480px] rounded-full bg-primary/20 blur-3xl" />
-
-            {/* Stats */}
-            <StatsShowcase />
-          </div>
-        </main>
-      </section>
-
-      {/* Process Section */}
-      <section className="relative pt-12 pb-32">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-6xl mx-auto space-y-16">
-            <div className="text-center space-y-4">
-              <h2 className="text-4xl sm:text-5xl font-bold text-balance">
-                Our <span className="text-primary glow-cyan">Process</span>
-              </h2>
-              <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-                A proven methodology that delivers results every time
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {[
-                {
-                  step: "01",
-                  title: "Discovery",
-                  description:
-                    "We dive deep into your vision, goals, and requirements to create a solid foundation.",
-                },
-                {
-                  step: "02",
-                  title: "Design",
-                  description:
-                    "Crafting beautiful, user-centered designs that bring your brand to life.",
-                },
-                {
-                  step: "03",
-                  title: "Development",
-                  description:
-                    "Building with modern technologies and best practices for optimal performance.",
-                },
-                {
-                  step: "04",
-                  title: "Launch",
-                  description:
-                    "Deploying your project with confidence and providing ongoing support.",
-                },
-              ].map((item, index) => (
-                <div key={index} className="relative">
-                  <div className="text-6xl font-bold text-primary/80 mb-4">
-                    {item.step}
-                  </div>
-                  <h3 className="text-2xl font-bold mb-3">{item.title}</h3>
-                  <p className="text-foreground/70 leading-relaxed">
-                    {item.description}
-                  </p>
-                </div>
+                  <span>{service}</span>
+                  <ArrowRight className="h-4 w-4" />
+                </Link>
               ))}
             </div>
           </div>
         </div>
       </section>
 
-      {/* Journey Timeline Section */}
-      <section className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 pt-12">
-        <div className="space-y-16">
-          <div className="text-center space-y-4">
-            <h2 className="text-4xl sm:text-5xl font-bold text-balance">
-              Our <span className="text-primary glow-cyan">Journey</span>
-            </h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              From a small startup to a trusted global partner
+      <section className="section-shell py-20">
+        <StatsShowcase />
+      </section>
+
+      <section className="border-y border-border bg-card">
+        <div className="section-shell py-20">
+          <div className="mb-12 grid gap-6 md:grid-cols-[0.8fr_1fr] md:items-end">
+            <div>
+              <p className="label-caps mb-3 text-primary">Process</p>
+              <h2 className="text-4xl font-bold leading-tight text-foreground md:text-5xl">
+                Built in clear stages.
+              </h2>
+            </div>
+            <p className="body-light max-w-2xl md:justify-self-end">
+              Every engagement moves from scope to design to production with
+              visible decisions, practical milestones, and no decorative
+              complexity.
             </p>
           </div>
 
-          <JourneyTimeline />
+          <div className="grid gap-px overflow-hidden border border-border bg-border md:grid-cols-2 lg:grid-cols-4">
+            {process.map((item) => (
+              <article key={item.step} className="bg-card p-6">
+                <div className="text-5xl font-bold leading-none text-primary">
+                  {item.step}
+                </div>
+                <h3 className="mt-6 text-xl font-bold leading-tight text-foreground">
+                  {item.title}
+                </h3>
+                <p className="mt-3 text-sm font-light leading-relaxed text-foreground/70">
+                  {item.description}
+                </p>
+              </article>
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="relative py-32">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto">
-            <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-primary/20 via-card to-primary/10 border border-primary/30 p-12 md:p-16 text-center">
-              <div className="absolute inset-0 bg-grid-pattern opacity-10" />
-              <div className="relative z-10 space-y-6">
-                <h2 className="text-4xl sm:text-5xl font-bold text-balance">
-                  Ready to Build Something{" "}
-                  <span className="text-primary glow-cyan">Amazing?</span>
-                </h2>
-                <p className="text-xl text-foreground/80 max-w-2xl mx-auto">
-                  Let's turn your vision into reality. Get in touch today and
-                  let's start building your next big thing.
-                </p>
-                <div className="pt-4">
-                  <Link href="/contact">
-                    <Button
-                      size="lg"
-                      className="bg-primary text-primary-foreground hover:bg-primary/90 box-glow-cyan hover:box-glow-cyan-hover transition-all duration-300 text-lg px-10 py-7 rounded-full group"
-                    >
-                      Get Started Now
-                      <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
-                    </Button>
-                  </Link>
-                </div>
-              </div>
+      <section className="relative overflow-hidden border-y border-border">
+        <Image
+          src="/ai-chatbot-interface-futuristic.jpg"
+          alt="AI interface dashboard"
+          fill
+          className="object-cover opacity-20"
+          sizes="100vw"
+        />
+        <div className="absolute inset-0 bg-background/85" />
+        <div className="section-shell relative py-20">
+          <div className="max-w-3xl">
+            <p className="label-caps mb-3 text-primary">Start</p>
+            <h2 className="text-4xl font-bold leading-tight text-foreground md:text-5xl">
+              Bring us a product problem worth solving.
+            </h2>
+            <p className="body-light mt-5 max-w-2xl">
+              We will help shape the scope, design the interface, build the
+              system, and prepare it for real users.
+            </p>
+            <div className="mt-8">
+              <Button asChild size="lg" variant="outline">
+                <Link href="/contact">
+                  Contact AP13
+                  <ArrowRight className="h-4 w-4" />
+                </Link>
+              </Button>
             </div>
           </div>
         </div>
