@@ -139,4 +139,103 @@
   .flat-panel {
     @apply border border-border bg-card;
   }
+
+  .motion-fade-up {
+    animation: motionFadeUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+
+  .motion-fade-in {
+    animation: motionFadeIn 0.9s ease both;
+  }
+
+  .motion-delay-100 {
+    animation-delay: 100ms;
+  }
+
+  .motion-delay-200 {
+    animation-delay: 200ms;
+  }
+
+  .motion-delay-300 {
+    animation-delay: 300ms;
+  }
+
+  .motion-delay-400 {
+    animation-delay: 400ms;
+  }
+
+  .motion-image {
+    animation: motionImageDrift 18s ease-in-out infinite alternate;
+    will-change: transform;
+  }
+
+  .motion-link {
+    position: relative;
+  }
+
+  .motion-link::after {
+    background: var(--primary);
+    bottom: -1px;
+    content: "";
+    height: 1px;
+    left: 0;
+    position: absolute;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 280ms ease;
+    width: 100%;
+  }
+
+  .motion-link:hover::after,
+  .motion-link:focus-visible::after {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes motionFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes motionFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes motionImageDrift {
+  from {
+    transform: scale(1.02) translate3d(0, 0, 0);
+  }
+  to {
+    transform: scale(1.06) translate3d(-1.25%, -1%, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.001ms !important;
+  }
+
+  .motion-fade-up,
+  .motion-fade-in,
+  .motion-image {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
 }

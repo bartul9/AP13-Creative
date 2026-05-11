@@ -69,12 +69,12 @@ export default function ProjectsPage() {
           alt="SaaS dashboard interface"
           fill
           priority
-          className="object-cover opacity-20"
+          className="motion-image object-cover opacity-20"
           sizes="100vw"
         />
         <div className="absolute inset-0 bg-background/85" />
         <div className="section-shell relative py-16 md:py-20">
-          <div className="max-w-4xl">
+          <div className="motion-fade-up max-w-4xl">
             <p className="label-caps mb-4 text-primary">Projects</p>
             <h1 className="text-5xl font-bold leading-[1.05] text-foreground sm:text-6xl">
               Product work across web, mobile, SaaS, commerce, and AI.
@@ -89,14 +89,18 @@ export default function ProjectsPage() {
 
       <section className="section-shell py-20">
         <div className="grid gap-px overflow-hidden border border-border bg-border md:grid-cols-2 lg:grid-cols-3">
-          {projects.map((project) => (
-            <article key={project.title} className="flex flex-col bg-card">
+          {projects.map((project, index) => (
+            <article
+              key={project.title}
+              className="motion-fade-up group flex flex-col bg-card transition-colors duration-300 hover:bg-background"
+              style={{ animationDelay: `${index * 80}ms` }}
+            >
               <div className="relative aspect-[16/10] border-b border-border bg-background">
                 <Image
                   src={project.image}
                   alt={project.title}
                   fill
-                  className="object-cover"
+                  className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"
                   sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
                 />
               </div>
@@ -129,7 +133,7 @@ export default function ProjectsPage() {
 
       <section className="border-y border-border bg-card">
         <div className="section-shell py-20">
-          <div className="grid gap-8 md:grid-cols-[1fr_auto] md:items-center">
+          <div className="motion-fade-up grid gap-8 md:grid-cols-[1fr_auto] md:items-center">
             <div>
               <p className="label-caps mb-3 text-primary">Your project</p>
               <h2 className="text-3xl font-bold leading-tight text-foreground md:text-4xl">

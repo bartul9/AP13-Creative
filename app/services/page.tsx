@@ -122,12 +122,12 @@ export default function ServicesPage() {
           alt="Modern ecommerce application interface"
           fill
           priority
-          className="object-cover opacity-20"
+          className="motion-image object-cover opacity-20"
           sizes="100vw"
         />
         <div className="absolute inset-0 bg-background/85" />
         <div className="section-shell relative py-16 md:py-20">
-          <div className="max-w-4xl">
+          <div className="motion-fade-up max-w-4xl">
             <p className="label-caps mb-4 text-primary">Services</p>
             <h1 className="text-5xl font-bold leading-[1.05] text-foreground sm:text-6xl">
               Digital products, designed and engineered end to end.
@@ -143,13 +143,14 @@ export default function ServicesPage() {
 
       <section className="section-shell py-20">
         <div className="space-y-8">
-          {services.map((service) => {
+          {services.map((service, index) => {
             const Icon = service.icon;
 
             return (
               <article
                 key={service.title}
-                className="grid gap-8 border border-border bg-card p-6 md:grid-cols-[0.9fr_1.1fr] md:p-8 lg:p-10"
+                className="motion-fade-up grid gap-8 border border-border bg-card p-6 transition-colors duration-300 hover:bg-background md:grid-cols-[0.9fr_1.1fr] md:p-8 lg:p-10"
+                style={{ animationDelay: `${index * 90}ms` }}
               >
                 <div>
                   <div className="mb-6 flex size-14 items-center justify-center rounded-full border border-primary text-primary">
@@ -199,7 +200,7 @@ export default function ServicesPage() {
 
       <section className="border-y border-border bg-card">
         <div className="section-shell py-20">
-          <div className="mb-12 grid gap-6 md:grid-cols-[0.8fr_1fr] md:items-end">
+          <div className="motion-fade-up mb-12 grid gap-6 md:grid-cols-[0.8fr_1fr] md:items-end">
             <div>
               <p className="label-caps mb-3 text-primary">Expertise</p>
               <h2 className="text-4xl font-bold leading-tight text-foreground md:text-5xl">
@@ -213,11 +214,15 @@ export default function ServicesPage() {
           </div>
 
           <div className="grid gap-px overflow-hidden border border-border bg-border md:grid-cols-2 lg:grid-cols-4">
-            {additionalServices.map((service) => {
+            {additionalServices.map((service, index) => {
               const Icon = service.icon;
 
               return (
-                <article key={service.title} className="bg-card p-6">
+                <article
+                  key={service.title}
+                  className="motion-fade-up bg-card p-6 transition-colors duration-300 hover:bg-background"
+                  style={{ animationDelay: `${index * 90}ms` }}
+                >
                   <Icon className="h-8 w-8 text-primary" />
                   <h3 className="mt-6 text-xl font-bold leading-tight text-foreground">
                     {service.title}
@@ -233,7 +238,7 @@ export default function ServicesPage() {
       </section>
 
       <section className="section-shell py-20">
-        <div className="grid gap-8 border border-border bg-card p-8 md:grid-cols-[1fr_auto] md:items-center md:p-10">
+        <div className="motion-fade-up grid gap-8 border border-border bg-card p-8 transition-colors duration-300 hover:bg-background md:grid-cols-[1fr_auto] md:items-center md:p-10">
           <div>
             <p className="label-caps mb-3 text-primary">Next step</p>
             <h2 className="text-3xl font-bold leading-tight text-foreground md:text-4xl">

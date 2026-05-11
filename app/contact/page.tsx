@@ -63,12 +63,12 @@ export default function ContactPage() {
           alt="Mobile ordering app interface"
           fill
           priority
-          className="object-cover opacity-20"
+          className="motion-image object-cover opacity-20"
           sizes="100vw"
         />
         <div className="absolute inset-0 bg-background/85" />
         <div className="section-shell relative py-16 md:py-20">
-          <div className="max-w-4xl">
+          <div className="motion-fade-up max-w-4xl">
             <p className="label-caps mb-4 text-primary">Contact</p>
             <h1 className="text-5xl font-bold leading-[1.05] text-foreground sm:text-6xl">
               Tell us what you want to build.
@@ -83,7 +83,7 @@ export default function ContactPage() {
 
       <section className="section-shell py-20">
         <div className="grid gap-10 lg:grid-cols-[1.05fr_0.95fr]">
-          <div className="border border-border bg-card p-6 md:p-8 lg:p-10">
+          <div className="motion-fade-up border border-border bg-card p-6 md:p-8 lg:p-10">
             <div className="mb-8">
               <p className="label-caps mb-3 text-primary">Project inquiry</p>
               <h2 className="text-3xl font-bold leading-tight text-foreground">
@@ -153,7 +153,7 @@ export default function ContactPage() {
           </div>
 
           <div className="grid gap-px overflow-hidden border border-border bg-border sm:grid-cols-2 lg:grid-cols-1">
-            {contactItems.map((item) => {
+            {contactItems.map((item, index) => {
               const Icon = item.icon;
               const content = (
                 <>
@@ -182,12 +182,17 @@ export default function ContactPage() {
                       ? "noopener noreferrer"
                       : undefined
                   }
-                  className="grid gap-5 bg-card p-6 transition-colors hover:text-primary"
+                  className="motion-fade-up grid gap-5 bg-card p-6 transition-colors duration-300 hover:bg-background hover:text-primary"
+                  style={{ animationDelay: `${index * 80}ms` }}
                 >
                   {content}
                 </a>
               ) : (
-                <div key={item.title} className="grid gap-5 bg-card p-6">
+                <div
+                  key={item.title}
+                  className="motion-fade-up grid gap-5 bg-card p-6 transition-colors duration-300 hover:bg-background"
+                  style={{ animationDelay: `${index * 80}ms` }}
+                >
                   {content}
                 </div>
               );

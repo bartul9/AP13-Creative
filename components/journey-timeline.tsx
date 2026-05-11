@@ -56,13 +56,14 @@ export function JourneyTimeline() {
   return (
     <div className="mx-auto max-w-5xl border-y border-border">
       <div className="divide-y divide-border">
-        {milestones.map((milestone) => {
+        {milestones.map((milestone, index) => {
           const Icon = milestone.icon;
 
           return (
             <div
               key={milestone.year}
-              className="grid gap-6 py-8 md:grid-cols-[160px_64px_1fr] md:items-start"
+              className="motion-fade-up grid gap-6 py-8 md:grid-cols-[160px_64px_1fr] md:items-start"
+              style={{ animationDelay: `${index * 80}ms` }}
             >
               <div className="label-caps text-primary">{milestone.year}</div>
               <div className="flex size-12 items-center justify-center rounded-full border border-primary text-primary md:mx-auto">

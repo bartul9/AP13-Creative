@@ -120,12 +120,12 @@ export default function CareersPage() {
           alt="Mobile product interface"
           fill
           priority
-          className="object-cover opacity-20"
+          className="motion-image object-cover opacity-20"
           sizes="100vw"
         />
         <div className="absolute inset-0 bg-background/85" />
         <div className="section-shell relative py-16 md:py-20">
-          <div className="max-w-4xl">
+          <div className="motion-fade-up max-w-4xl">
             <p className="label-caps mb-4 text-primary">Careers</p>
             <h1 className="text-5xl font-bold leading-[1.05] text-foreground sm:text-6xl">
               Join a small team building serious digital products.
@@ -139,7 +139,7 @@ export default function CareersPage() {
       </section>
 
       <section className="section-shell py-20">
-        <div className="mb-12 grid gap-6 md:grid-cols-[0.8fr_1fr] md:items-end">
+        <div className="motion-fade-up mb-12 grid gap-6 md:grid-cols-[0.8fr_1fr] md:items-end">
           <div>
             <p className="label-caps mb-3 text-primary">Benefits</p>
             <h2 className="text-4xl font-bold leading-tight text-foreground md:text-5xl">
@@ -153,11 +153,15 @@ export default function CareersPage() {
         </div>
 
         <div className="grid gap-px overflow-hidden border border-border bg-border md:grid-cols-2 lg:grid-cols-3">
-          {benefits.map((benefit) => {
+          {benefits.map((benefit, index) => {
             const Icon = benefit.icon;
 
             return (
-              <article key={benefit.title} className="bg-card p-6">
+              <article
+                key={benefit.title}
+                className="motion-fade-up bg-card p-6 transition-colors duration-300 hover:bg-background"
+                style={{ animationDelay: `${index * 80}ms` }}
+              >
                 <Icon className="h-8 w-8 text-primary" />
                 <h3 className="mt-6 text-xl font-bold leading-tight text-foreground">
                   {benefit.title}
@@ -173,7 +177,7 @@ export default function CareersPage() {
 
       <section className="border-y border-border bg-card">
         <div className="section-shell py-20">
-          <div className="mb-12">
+          <div className="motion-fade-up mb-12">
             <p className="label-caps mb-3 text-primary">Open positions</p>
             <h2 className="text-4xl font-bold leading-tight text-foreground md:text-5xl">
               Current roles.
@@ -181,10 +185,11 @@ export default function CareersPage() {
           </div>
 
           <div className="space-y-4">
-            {openings.map((opening) => (
+            {openings.map((opening, index) => (
               <article
                 key={opening.title}
-                className="grid gap-6 border border-border bg-background p-6 lg:grid-cols-[1fr_auto] lg:items-start"
+                className="motion-fade-up grid gap-6 border border-border bg-background p-6 transition-colors duration-300 hover:bg-card lg:grid-cols-[1fr_auto] lg:items-start"
+                style={{ animationDelay: `${index * 90}ms` }}
               >
                 <div>
                   <h3 className="text-2xl font-bold leading-tight text-foreground">
@@ -231,7 +236,7 @@ export default function CareersPage() {
       </section>
 
       <section className="section-shell py-20">
-        <div className="grid gap-8 border border-border bg-card p-8 md:grid-cols-[1fr_auto] md:items-center md:p-10">
+        <div className="motion-fade-up grid gap-8 border border-border bg-card p-8 transition-colors duration-300 hover:bg-background md:grid-cols-[1fr_auto] md:items-center md:p-10">
           <div>
             <p className="label-caps mb-3 text-primary">Open application</p>
             <h2 className="text-3xl font-bold leading-tight text-foreground md:text-4xl">

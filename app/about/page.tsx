@@ -38,12 +38,12 @@ export default function AboutPage() {
           alt="Modern product interface preview"
           fill
           priority
-          className="object-cover opacity-20"
+          className="motion-image object-cover opacity-20"
           sizes="100vw"
         />
         <div className="absolute inset-0 bg-background/85" />
         <div className="section-shell relative py-16 md:py-20">
-          <div className="max-w-4xl">
+          <div className="motion-fade-up max-w-4xl">
             <p className="label-caps mb-4 text-primary">About</p>
             <h1 className="text-5xl font-bold leading-[1.05] text-foreground sm:text-6xl">
               A compact digital product team from Split, Croatia.
@@ -58,7 +58,7 @@ export default function AboutPage() {
       </section>
 
       <section className="section-shell py-20">
-        <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr]">
+        <div className="motion-fade-up grid gap-10 lg:grid-cols-[0.8fr_1.2fr]">
           <div>
             <p className="label-caps mb-3 text-primary">Story</p>
             <h2 className="text-4xl font-bold leading-tight text-foreground md:text-5xl">
@@ -88,7 +88,7 @@ export default function AboutPage() {
 
       <section className="border-y border-border bg-card">
         <div className="section-shell py-20">
-          <div className="mb-12 grid gap-6 md:grid-cols-[0.8fr_1fr] md:items-end">
+          <div className="motion-fade-up mb-12 grid gap-6 md:grid-cols-[0.8fr_1fr] md:items-end">
             <div>
               <p className="label-caps mb-3 text-primary">Principles</p>
               <h2 className="text-4xl font-bold leading-tight text-foreground md:text-5xl">
@@ -102,11 +102,15 @@ export default function AboutPage() {
           </div>
 
           <div className="grid gap-px overflow-hidden border border-border bg-border md:grid-cols-2 lg:grid-cols-4">
-            {principles.map((principle) => {
+            {principles.map((principle, index) => {
               const Icon = principle.icon;
 
               return (
-                <article key={principle.title} className="bg-card p-6">
+                <article
+                  key={principle.title}
+                  className="motion-fade-up bg-card p-6 transition-colors duration-300 hover:bg-background"
+                  style={{ animationDelay: `${index * 90}ms` }}
+                >
                   <Icon className="h-8 w-8 text-primary" />
                   <h3 className="mt-6 text-xl font-bold leading-tight text-foreground">
                     {principle.title}
@@ -122,7 +126,7 @@ export default function AboutPage() {
       </section>
 
       <section className="section-shell py-20">
-        <div className="mb-12">
+        <div className="motion-fade-up mb-12">
           <p className="label-caps mb-3 text-primary">Timeline</p>
           <h2 className="text-4xl font-bold leading-tight text-foreground md:text-5xl">
             The path to AP13 Creative.
