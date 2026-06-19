@@ -1,12 +1,12 @@
 import type React from "react";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
+import "@fontsource-variable/space-grotesk";
+import "@fontsource-variable/inter";
+import "@fontsource-variable/jetbrains-mono";
 import "./globals.css";
 import { Navigation } from "@/components/navigation";
 import { Footer } from "@/components/footer";
-
-const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://ap13-creative.company"),
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
     siteName: "AP13 Creative",
     images: [
       {
-        url: "https://ap13-creative.company/logo.png",
+        url: "https://ap13-creative.company/ap13-cyber-wide.png",
         width: 1200,
         height: 630,
         alt: "AP13 Creative branding",
@@ -57,7 +57,7 @@ export const metadata: Metadata = {
     title: "AP13 Creative - Digital Agency",
     description:
       "Turning your vision into high-quality digital reality with web and mobile app development.",
-    images: ["https://ap13-creative.company/logo.png"],
+    images: ["https://ap13-creative.company/ap13-cyber-wide.png"],
   },
   robots: {
     index: true,
@@ -99,7 +99,7 @@ export default function RootLayout({
               "@type": "Organization",
               name: "AP13 Creative",
               url: "https://ap13-creative.company/",
-              logo: "https://ap13-creative.company/logo.png",
+              logo: "https://ap13-creative.company/ap13-cyber-mark.png",
               sameAs: ["https://www.linkedin.com/company/ap13-creative/"],
             }),
           }}
@@ -122,9 +122,11 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={`${inter.className} font-sans antialiased`}>
+      <body className="font-sans antialiased">
+        <div className="site-ambient" aria-hidden="true" />
+        <div className="site-grain" aria-hidden="true" />
         <Navigation />
-        {children}
+        <main id="main">{children}</main>
         <Footer />
         <Analytics />
       </body>

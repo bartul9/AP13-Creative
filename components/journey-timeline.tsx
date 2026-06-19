@@ -6,6 +6,7 @@ import {
   TrendingUp,
   Users,
 } from "lucide-react";
+import { Reveal } from "@/components/reveal";
 
 const milestones = [
   {
@@ -54,30 +55,32 @@ const milestones = [
 
 export function JourneyTimeline() {
   return (
-    <div className="mx-auto max-w-5xl border-y border-border">
-      <div className="divide-y divide-border">
+    <div className="relative mx-auto max-w-3xl">
+      {/* vertical spine */}
+      <div className="absolute left-[27px] top-2 bottom-2 w-px bg-gradient-to-b from-primary/50 via-border to-transparent md:left-[31px]" />
+
+      <div className="space-y-3">
         {milestones.map((milestone, index) => {
           const Icon = milestone.icon;
-
           return (
-            <div
-              key={milestone.year}
-              className="motion-fade-up grid gap-6 py-8 md:grid-cols-[160px_64px_1fr] md:items-start"
-              style={{ animationDelay: `${index * 80}ms` }}
-            >
-              <div className="label-caps text-primary">{milestone.year}</div>
-              <div className="flex size-12 items-center justify-center rounded-full border border-primary text-primary md:mx-auto">
-                <Icon className="h-5 w-5" />
+            <Reveal key={milestone.year} delay={index * 70}>
+              <div className="group relative flex gap-6 rounded-2xl border border-transparent p-4 transition-colors duration-500 hover:border-border hover:bg-card/50">
+                <div className="relative z-10 flex size-14 flex-shrink-0 items-center justify-center rounded-full border border-primary/30 bg-background text-primary shadow-[0_0_28px_-10px_rgba(34,224,242,0.7)] transition-transform duration-500 group-hover:scale-105 md:size-16">
+                  <Icon className="h-5 w-5 md:h-6 md:w-6" />
+                </div>
+                <div className="pt-1">
+                  <span className="font-mono text-xs font-medium uppercase tracking-[0.2em] text-primary">
+                    {milestone.year}
+                  </span>
+                  <h3 className="mt-2 text-xl font-semibold text-foreground md:text-2xl">
+                    {milestone.title}
+                  </h3>
+                  <p className="mt-2 max-w-xl text-sm leading-relaxed text-foreground/60 md:text-base">
+                    {milestone.description}
+                  </p>
+                </div>
               </div>
-              <div>
-                <h3 className="text-2xl font-bold leading-tight text-foreground">
-                  {milestone.title}
-                </h3>
-                <p className="mt-3 max-w-2xl text-base font-light leading-relaxed text-foreground/75">
-                  {milestone.description}
-                </p>
-              </div>
-            </div>
+            </Reveal>
           );
         })}
       </div>

@@ -1,15 +1,15 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Linkedin, Mail, MapPin } from "lucide-react";
+import { ArrowUpRight, Linkedin, Mail, MapPin } from "lucide-react";
 
 const linkGroups = [
   {
-    title: "Company",
+    title: "Studio",
     links: [
-      { href: "/", label: "Home" },
       { href: "/about", label: "About" },
-      { href: "/projects", label: "Projects" },
+      { href: "/projects", label: "Work" },
       { href: "/careers", label: "Careers" },
+      { href: "/contact", label: "Contact" },
     ],
   },
   {
@@ -17,7 +17,7 @@ const linkGroups = [
     links: [
       { href: "/services", label: "Web Development" },
       { href: "/services", label: "Mobile Apps" },
-      { href: "/services", label: "UI/UX Design" },
+      { href: "/services", label: "Product Design" },
       { href: "/services", label: "AI Solutions" },
     ],
   },
@@ -25,43 +25,47 @@ const linkGroups = [
 
 export function Footer() {
   return (
-    <footer className="border-t border-border bg-card">
-      <div className="section-shell py-16">
-        <div className="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-4">
-          <div className="space-y-4">
-            <Image
-              src="/logo1.png"
-              alt="AP13 Creative"
-              width={150}
-              height={70}
-              className="h-8 w-auto"
-            />
-            <p className="text-sm font-light leading-relaxed text-foreground/70">
-              Turning your vision into high-quality digital reality with speed,
-              precision, and creativity.
+    <footer className="relative mt-10 border-t border-border/70">
+      <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
+      <div className="section-shell pt-20 pb-10">
+        <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1.2fr]">
+          <div className="space-y-5">
+            <Link href="/" className="flex items-center gap-3">
+              <Image
+                src="/ap13-cyber-mark.png"
+                alt="AP13 Creative"
+                width={48}
+                height={48}
+                className="h-11 w-11 rounded-lg border border-primary/30 object-cover shadow-[0_0_24px_-8px_rgba(34,224,242,0.6)]"
+              />
+              <span className="font-display text-base font-semibold tracking-tight text-foreground">
+                AP13 Creative
+              </span>
+            </Link>
+            <p className="max-w-xs text-sm leading-relaxed text-foreground/60">
+              A digital product studio turning ambitious ideas into refined,
+              production-grade web, mobile, and AI software.
             </p>
-            <div className="flex items-center gap-3">
-              <a
-                href="https://www.linkedin.com/company/ap13-creative"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="AP13 Creative on LinkedIn"
-                className="flex size-10 items-center justify-center rounded-full border border-border bg-background transition-colors hover:border-primary hover:text-primary"
-              >
-                <Linkedin className="h-4 w-4" />
-              </a>
-            </div>
+            <a
+              href="https://www.linkedin.com/company/ap13-creative"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="AP13 Creative on LinkedIn"
+              className="inline-flex size-10 items-center justify-center rounded-full border border-border bg-background/40 text-foreground/80 transition-colors hover:border-primary/60 hover:text-primary"
+            >
+              <Linkedin className="h-4 w-4" />
+            </a>
           </div>
 
           {linkGroups.map((group) => (
             <div key={group.title} className="space-y-4">
-              <h3 className="label-caps text-foreground">{group.title}</h3>
+              <h3 className="label-caps">{group.title}</h3>
               <ul className="space-y-3">
                 {group.links.map((item) => (
                   <li key={`${group.title}-${item.label}`}>
                     <Link
                       href={item.href}
-                      className="text-sm font-light text-foreground/70 transition-colors hover:text-primary"
+                      className="link-underline text-sm text-foreground/65 transition-colors hover:text-foreground"
                     >
                       {item.label}
                     </Link>
@@ -72,35 +76,49 @@ export function Footer() {
           ))}
 
           <div className="space-y-4">
-            <h3 className="label-caps text-foreground">Contact</h3>
-            <ul className="space-y-3">
-              <li className="flex items-start gap-2 text-sm font-light text-foreground/70">
+            <h3 className="label-caps">Get in touch</h3>
+            <ul className="space-y-3 text-sm">
+              <li className="flex items-start gap-2.5 text-foreground/65">
                 <MapPin className="mt-0.5 h-4 w-4 flex-shrink-0 text-primary" />
-                <span>Split, Croatia</span>
+                <span>Split, Croatia — working worldwide</span>
               </li>
-              <li className="flex items-start gap-2 text-sm">
+              <li className="flex items-start gap-2.5">
                 <Mail className="mt-0.5 h-4 w-4 flex-shrink-0 text-primary" />
                 <a
                   href="mailto:bartul123@outlook.com"
-                  className="font-light text-foreground/70 transition-colors hover:text-primary"
+                  className="link-underline text-foreground/65 transition-colors hover:text-foreground"
                 >
                   bartul123@outlook.com
                 </a>
               </li>
             </ul>
+            <Link
+              href="/contact"
+              className="inline-flex items-center gap-1.5 text-sm font-medium text-primary transition-colors hover:text-cyan"
+            >
+              Start a project
+              <ArrowUpRight className="h-4 w-4" />
+            </Link>
           </div>
         </div>
 
-        <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-border pt-8 sm:flex-row">
-          <p className="text-sm font-light text-foreground/60">
-            &copy; 2025 AP13 Creative. All rights reserved.
+        {/* oversized wordmark */}
+        <div
+          aria-hidden="true"
+          className="pointer-events-none mt-16 select-none overflow-hidden"
+        >
+          <div className="bg-gradient-to-b from-foreground/[0.06] to-transparent bg-clip-text text-center font-display text-[18vw] font-bold leading-none tracking-tighter text-transparent">
+            AP13
+          </div>
+        </div>
+
+        <div className="mt-6 flex flex-col items-center justify-between gap-4 border-t border-border/60 pt-8 text-center sm:flex-row sm:text-left">
+          <p className="text-xs text-foreground/45">
+            © {new Date().getFullYear()} AP13 Creative. All rights reserved.
           </p>
-          <Link
-            href="/contact"
-            className="label-caps text-primary transition-colors hover:text-primary/80"
-          >
-            Contact AP13
-          </Link>
+          <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-foreground/40">
+            Designed &amp; built in Croatia
+          </p>
         </div>
       </div>
     </footer>
