@@ -13,7 +13,6 @@ const navItems = [
   { href: "/about", label: "About" },
   { href: "/services", label: "Services" },
   { href: "/projects", label: "Work" },
-  { href: "/careers", label: "Careers" },
 ];
 
 export function Navigation() {
@@ -26,8 +25,7 @@ export function Navigation() {
     const onScroll = () => {
       const scrollTop = window.scrollY;
       setScrolled(scrollTop > 12);
-      const height =
-        document.documentElement.scrollHeight - window.innerHeight;
+      const height = document.documentElement.scrollHeight - window.innerHeight;
       setProgress(height > 0 ? (scrollTop / height) * 100 : 0);
     };
     onScroll();
@@ -49,14 +47,14 @@ export function Navigation() {
           "transition-all duration-500",
           scrolled
             ? "border-b border-border/70 bg-background/70 backdrop-blur-xl"
-            : "border-b border-transparent bg-transparent"
+            : "border-b border-transparent bg-transparent",
         )}
       >
         <div className="section-shell">
           <div
             className={cn(
               "flex items-center justify-between transition-all duration-500",
-              scrolled ? "h-16" : "h-20"
+              scrolled ? "h-16" : "h-20",
             )}
           >
             <Link href="/" className="group flex items-center gap-3">
@@ -91,7 +89,7 @@ export function Navigation() {
                       "relative rounded-full px-4 py-2 text-[13px] font-medium transition-colors duration-300",
                       active
                         ? "text-primary"
-                        : "text-foreground/70 hover:text-foreground"
+                        : "text-foreground/70 hover:text-foreground",
                     )}
                   >
                     {active && (
@@ -140,7 +138,7 @@ export function Navigation() {
           "fixed inset-0 top-0 z-40 origin-top bg-background/95 backdrop-blur-2xl transition-all duration-500 md:hidden",
           mobileMenuOpen
             ? "pointer-events-auto opacity-100"
-            : "pointer-events-none opacity-0"
+            : "pointer-events-none opacity-0",
         )}
       >
         <div className="section-shell flex h-full flex-col pt-24 pb-10">
@@ -155,7 +153,7 @@ export function Navigation() {
                     onClick={() => setMobileMenuOpen(false)}
                     className={cn(
                       "flex items-center justify-between border-b border-border/60 py-5 font-display text-2xl font-medium transition-colors",
-                      active ? "text-primary" : "text-foreground/85"
+                      active ? "text-primary" : "text-foreground/85",
                     )}
                     style={{
                       transitionDelay: mobileMenuOpen ? `${idx * 40}ms` : "0ms",
@@ -165,7 +163,7 @@ export function Navigation() {
                     <ArrowUpRight className="h-5 w-5 text-muted-foreground" />
                   </Link>
                 );
-              }
+              },
             )}
           </nav>
           <div className="mt-auto">

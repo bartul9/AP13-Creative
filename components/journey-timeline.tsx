@@ -57,7 +57,7 @@ export function JourneyTimeline() {
   return (
     <div className="relative mx-auto max-w-3xl">
       {/* vertical spine */}
-      <div className="absolute left-[27px] top-2 bottom-2 w-px bg-gradient-to-b from-primary/50 via-border to-transparent md:left-[31px]" />
+      <div className="absolute left-[45px] top-8 bottom-2 w-px bg-gradient-to-b from-primary/50 via-border to-transparent md:left-[50px]" />
 
       <div className="space-y-3">
         {milestones.map((milestone, index) => {

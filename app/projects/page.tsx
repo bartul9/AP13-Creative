@@ -17,16 +17,6 @@ const projects: Project[] = [
       "A modern commerce platform with live inventory, payment flows, and an analytics dashboard.",
     image: "/modern-ecommerce-platform-dark-theme.jpg",
     tags: ["Next.js", "Stripe", "PostgreSQL"],
-    result: "+300% conversion increase",
-  },
-  {
-    title: "Fitness Tracking App",
-    category: "Mobile",
-    description:
-      "A cross-platform mobile app for workouts, nutrition, health metrics, and AI-guided recommendations.",
-    image: "/fitness-tracking-app.png",
-    tags: ["React Native", "AI/ML", "Firebase"],
-    result: "50K+ active users",
   },
   {
     title: "SaaS Analytics Dashboard",
@@ -35,7 +25,6 @@ const projects: Project[] = [
       "Real-time analytics, reporting tools, and collaboration workflows for operational teams.",
     image: "/saas-analytics-dashboard-dark-ui.jpg",
     tags: ["React", "Charts", "WebSocket"],
-    result: "10K+ users supported",
   },
   {
     title: "AI Chatbot Platform",
@@ -44,7 +33,6 @@ const projects: Project[] = [
       "An intelligent chatbot platform with natural-language workflows and multi-channel support.",
     image: "/ai-chatbot-interface-futuristic.jpg",
     tags: ["OpenAI", "Node.js", "MongoDB"],
-    result: "95% satisfaction",
   },
   {
     title: "Real Estate Portal",
@@ -53,16 +41,6 @@ const projects: Project[] = [
       "A listing platform with search, property detail pages, virtual-tour support, and lead capture.",
     image: "/real-estate-property-portal-modern.jpg",
     tags: ["Next.js", "Maps API", "3D Tours"],
-    result: "1M+ monthly visitors",
-  },
-  {
-    title: "Restaurant Ordering App",
-    category: "Mobile",
-    description:
-      "A mobile ordering system with payments, live tracking, customer accounts, and loyalty flows.",
-    image: "/restaurant-ordering-app.png",
-    tags: ["React Native", "Stripe", "GPS"],
-    result: "+40% more orders",
   },
 ];
 
