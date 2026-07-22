@@ -82,7 +82,7 @@ const approach = [
   {
     title: "Senior-led, end to end",
     description:
-      "The people you talk to are the people designing and building the product. No handoffs to junior teams.",
+      "The people you talk to are the people designing and building your product. No handoffs, no middle layer.",
   },
   {
     title: "Designed to feel premium",
@@ -101,19 +101,19 @@ const featured = [
     title: "Commerce Platform",
     category: "Web · Next.js",
     image: "/modern-ecommerce-platform-dark-theme.jpg",
-    result: "+300% conversion",
+    result: "Stripe · PostgreSQL",
   },
   {
     title: "SaaS Analytics Suite",
     category: "Web · Real-time",
     image: "/saas-analytics-dashboard-dark-ui.jpg",
-    result: "10K+ active users",
+    result: "React · WebSocket",
   },
   {
     title: "AI Assistant Platform",
     category: "AI · Automation",
     image: "/ai-chatbot-interface-futuristic.jpg",
-    result: "95% satisfaction",
+    result: "OpenAI · Node.js",
   },
 ];
 
@@ -147,9 +147,9 @@ export default function HomePage() {
               className="anim-rise mt-7 max-w-xl text-lg leading-relaxed text-foreground/70"
               style={{ animationDelay: "120ms" }}
             >
-              AP13 Creative is a senior studio designing and building web,
-              mobile, and AI-powered software — shipped with speed, taste, and
-              engineering discipline.
+              AP13 Creative is a senior digital studio designing and building
+              web, mobile, and AI-powered software — shipped with speed, taste,
+              and engineering discipline.
             </p>
             <div
               className="anim-rise mt-9 flex flex-col gap-3 sm:flex-row"
@@ -178,7 +178,9 @@ export default function HomePage() {
                 Available for new projects
               </span>
               <span className="hidden h-4 w-px bg-border sm:block" />
-              <span>Trusted by founders &amp; teams across 12+ countries</span>
+              <span>
+                6+ years building production web, mobile &amp; AI software
+              </span>
             </div>
           </div>
         </div>
@@ -205,9 +207,9 @@ export default function HomePage() {
       {/* ============================ STATS ============================ */}
       <section className="section-shell py-24">
         <Reveal className="mx-auto mb-12 max-w-2xl text-center">
-          <p className="eyebrow mb-4 justify-center">By the numbers</p>
+          <p className="eyebrow mb-4 justify-center">The short version</p>
           <h2 className="text-balance text-4xl text-foreground md:text-5xl">
-            A small team with a serious track record.
+            One studio, end to end — from first pixel to production.
           </h2>
         </Reveal>
         <StatsShowcase />
@@ -313,12 +315,13 @@ export default function HomePage() {
               The difference is in the details.
             </h2>
             <p className="body-light mt-5 max-w-md">
-              We&apos;re intentionally small so quality stays visible and
-              decisions stay close to the people doing the work.
+              We&apos;re intentionally small — so quality stays visible,
+              communication stays direct, and every decision stays close to the
+              people doing the work.
             </p>
             <Button asChild variant="outline" className="mt-8">
               <Link href="/about">
-                Meet the studio
+                About the studio
                 <ArrowUpRight className="h-4 w-4" />
               </Link>
             </Button>
@@ -353,7 +356,7 @@ export default function HomePage() {
             <Reveal>
               <p className="eyebrow mb-4">Selected work</p>
               <h2 className="text-balance text-4xl text-foreground md:text-5xl">
-                Products we&apos;re proud of.
+                The kind of products we build.
               </h2>
             </Reveal>
             <Reveal delay={100}>
@@ -410,10 +413,10 @@ export default function HomePage() {
         <div className="section-shell">
           <Reveal className="mx-auto max-w-4xl text-center">
             <Sparkles className="mx-auto mb-8 h-7 w-7 text-primary" />
-            <p className="text-balance font-display text-2xl font-medium leading-snug text-foreground md:text-4xl md:leading-[1.25]">
-              &ldquo;We treat every product like it&apos;s our own — the goal
+            <p className="italic text-balance font-display text-2xl font-medium leading-snug text-foreground md:text-4xl md:leading-[1.25]">
+              &ldquo;We treat every product like it&apos;s our own - the goal
               isn&apos;t just to ship, it&apos;s to ship something that feels{" "}
-              <span className="text-gradient">genuinely premium</span> the
+              <span className="text-gradient">genuinely premium </span> the
               moment someone opens it.&rdquo;
             </p>
             <div className="mt-8 flex items-center justify-center gap-3">
@@ -426,9 +429,11 @@ export default function HomePage() {
               />
               <div className="text-left">
                 <p className="text-sm font-semibold text-foreground">
-                  The AP13 Creative team
+                  Luka Bartulović
                 </p>
-                <p className="text-xs text-foreground/50">Founders &amp; engineers</p>
+                <p className="text-xs text-foreground/50">
+                  Founder · AP13 Creative
+                </p>
               </div>
             </div>
           </Reveal>

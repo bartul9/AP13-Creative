@@ -14,13 +14,13 @@ const contactItems = [
     icon: MapPin,
     title: "Location",
     value: "Split, Croatia",
-    note: "Working globally with remote-first delivery.",
+    note: "Working remotely with clients across time zones.",
   },
   {
     icon: Mail,
     title: "Email",
-    value: "bartul123@outlook.com",
-    href: "mailto:bartul123@outlook.com",
+    value: "projects@ap13-creative.company",
+    href: "mailto:projects@ap13-creative.company",
     note: "Send project scope, timelines, or questions.",
   },
   {
@@ -28,7 +28,7 @@ const contactItems = [
     title: "LinkedIn",
     value: "AP13 Creative",
     href: "https://www.linkedin.com/company/ap13-creative",
-    note: "Follow updates and company activity.",
+    note: "Follow project updates and new work.",
   },
   {
     icon: Clock,
@@ -53,7 +53,7 @@ export default function ContactPage() {
       `Name: ${formData.name}\nEmail: ${formData.email}\n\n${formData.message}`
     );
 
-    window.location.href = `mailto:bartul123@outlook.com?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:projects@ap13-creative.company?subject=${subject}&body=${body}`;
   };
 
   return (

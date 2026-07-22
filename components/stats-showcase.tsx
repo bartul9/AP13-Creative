@@ -1,34 +1,40 @@
 import { CountUp } from "@/components/count-up";
 import { Reveal } from "@/components/reveal";
 
-const stats = [
+type Stat = {
+  value?: number;
+  suffix?: string;
+  display?: string;
+  label: string;
+  description: string;
+};
+
+const stats: Stat[] = [
   {
-    value: 50,
+    value: 6,
     suffix: "+",
-    label: "Years combined experience",
+    label: "Years of experience",
     description:
-      "A senior-led team blending engineering, product strategy, and design craft.",
+      "Shipping production web, mobile, and AI software since 2020.",
   },
   {
-    value: 40,
-    suffix: "+",
-    label: "Products shipped",
+    display: "A→Z",
+    label: "End to end",
     description:
-      "Launches across SaaS, fintech, commerce, and AI-driven experiences.",
+      "Strategy, interface design, engineering, and launch — handled under one roof.",
   },
   {
-    value: 12,
-    suffix: "+",
-    label: "Countries served",
+    display: "1:1",
+    label: "Direct collaboration",
     description:
-      "Remote-first delivery across time zones, cultures, and complex roadmaps.",
+      "You work directly with the people building your product. No account managers, no handoffs.",
   },
   {
     value: 24,
     suffix: "h",
     label: "Avg. response time",
     description:
-      "Direct communication with the people designing and building your product.",
+      "Fast, direct communication throughout the entire project.",
   },
 ];
 
@@ -42,7 +48,11 @@ export function StatsShowcase() {
           className="group bg-card/60 p-7 transition-colors duration-500 hover:bg-card"
         >
           <div className="font-display text-5xl font-semibold leading-none tracking-tight text-gradient md:text-6xl">
-            <CountUp value={stat.value} suffix={stat.suffix} />
+            {stat.value !== undefined ? (
+              <CountUp value={stat.value} suffix={stat.suffix} />
+            ) : (
+              <span>{stat.display}</span>
+            )}
           </div>
           <div className="mt-5 text-sm font-semibold text-foreground">
             {stat.label}

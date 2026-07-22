@@ -9,7 +9,7 @@ import { CtaSection } from "@/components/cta-section";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "AP13 Creative is a senior digital product studio from Split, Croatia — designers and engineers crafting premium web, mobile, and AI software.",
+    "AP13 Creative is a senior digital product studio from Split, Croatia — crafting premium web, mobile, and AI software.",
 };
 
 const principles = [
@@ -29,7 +29,7 @@ const principles = [
     icon: Zap,
     title: "Fast Delivery",
     description:
-      "Small teams move quickly when scope is clear, communication is direct, and the build stays focused.",
+      "Staying small keeps scope clear, communication direct, and the build focused — with no layers to slow it down.",
   },
   {
     icon: Users,
@@ -40,7 +40,7 @@ const principles = [
 ];
 
 const facts = [
-  { k: "Founded", v: "2024" },
+  { k: "Experience", v: "6+ years" },
   { k: "Based in", v: "Split, HR" },
   { k: "Model", v: "Remote-first" },
   { k: "Focus", v: "Web · Mobile · AI" },
@@ -57,7 +57,7 @@ export default function AboutPage() {
             <span className="text-gradient">obsession for craft.</span>
           </>
         }
-        description="AP13 Creative brings together developers and designers with 50+ years of combined experience across web, mobile, design systems, AI-enabled workflows, and production launches."
+        description="AP13 Creative is a compact digital studio with 6 years of experience across web, mobile, design systems, AI-enabled workflows, and production launches."
       />
 
       {/* Story */}
@@ -83,15 +83,15 @@ export default function AboutPage() {
           <Reveal delay={120}>
             <div className="panel space-y-6 p-7 text-lg leading-relaxed text-foreground/70 md:p-9">
               <p>
-                We work globally from Croatia, helping founders, operators, and
+                We work remotely from Croatia, helping founders, operators, and
                 growing teams turn product ideas into working software. Our
                 focus is simple: clear scope, strong interface design, clean
                 code, and shipping discipline.
               </p>
               <p>
-                The team is intentionally small. That keeps communication
-                direct, quality visible, and decisions close to the people
-                designing and building the product.
+                AP13 Creative is intentionally small. That keeps communication
+                direct, quality visible, and every decision close to the people
+                actually designing and building the product.
               </p>
               <p>
                 We care about speed, but never at the expense of
@@ -153,7 +153,7 @@ export default function AboutPage() {
               The path to AP13 Creative.
             </h2>
             <p className="body-light mt-5">
-              Five years of compounding craft — from first freelance launches to
+              Six years of compounding craft — from first freelance launches to
               a focused product studio.
             </p>
           </Reveal>

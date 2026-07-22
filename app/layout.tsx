@@ -11,27 +11,28 @@ import { Footer } from "@/components/footer";
 export const metadata: Metadata = {
   metadataBase: new URL("https://ap13-creative.company"),
   title: {
-    default: "AP13 Creative - Digital Agency",
+    default: "AP13 Creative — Digital Product Studio",
     template: "%s | AP13 Creative",
   },
   description:
-    "Turning your vision into high-quality digital reality. Web and mobile app development with precision, creativity, and style.",
+    "AP13 Creative is a digital product studio building high-quality web, mobile, and AI software with precision, creativity, and style.",
   keywords: [
     "AP13 Creative",
-    "digital agency",
+    "Luka Bartulović",
+    "digital studio",
     "web development",
     "mobile app development",
     "product design",
-    "software development agency",
+    "AI development",
     "UI UX design",
     "custom software",
     "startup development partner",
   ],
   applicationName: "AP13 Creative",
-  authors: [{ name: "AP13 Creative" }],
+  authors: [{ name: "Luka Bartulović" }],
   creator: "AP13 Creative",
   publisher: "AP13 Creative",
-  category: "Digital Agency",
+  category: "Web Development",
   alternates: {
     canonical: "https://ap13-creative.company/",
   },
@@ -39,7 +40,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "https://ap13-creative.company/",
-    title: "AP13 Creative - Digital Agency",
+    title: "AP13 Creative — Digital Product Studio",
     description:
       "AP13 Creative delivers high-quality web and mobile applications with precision, creativity, and style.",
     siteName: "AP13 Creative",
@@ -54,7 +55,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "AP13 Creative - Digital Agency",
+    title: "AP13 Creative — Digital Product Studio",
     description:
       "Turning your vision into high-quality digital reality with web and mobile app development.",
     images: ["https://ap13-creative.company/ap13-cyber-wide.png"],

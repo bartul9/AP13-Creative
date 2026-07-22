@@ -230,7 +230,7 @@ export default function ServicesPage() {
         <CtaSection
           eyebrow="Next step"
           title="Tell us what you need to ship."
-          description="We'll help define the right scope, team shape, milestones, and implementation plan."
+          description="We'll help define the right scope, milestones, and implementation plan."
           secondaryLabel="See our work"
           secondaryHref="/projects"
         />

@@ -8,7 +8,7 @@ const linkGroups = [
     links: [
       { href: "/about", label: "About" },
       { href: "/projects", label: "Work" },
-      { href: "/careers", label: "Careers" },
+      { href: "/services", label: "Services" },
       { href: "/contact", label: "Contact" },
     ],
   },
@@ -85,10 +85,10 @@ export function Footer() {
               <li className="flex items-start gap-2.5">
                 <Mail className="mt-0.5 h-4 w-4 flex-shrink-0 text-primary" />
                 <a
-                  href="mailto:bartul123@outlook.com"
-                  className="link-underline text-foreground/65 transition-colors hover:text-foreground"
+                  href="mailto:projects@ap13-creative.company"
+                  className="link-underline break-all text-foreground/65 transition-colors hover:text-foreground"
                 >
-                  bartul123@outlook.com
+                  projects@ap13-creative.company
                 </a>
               </li>
             </ul>
