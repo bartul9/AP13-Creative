@@ -41,14 +41,14 @@ const milestones = [
     year: "2024",
     title: "AP13 Idea & Brand",
     description:
-      "Defined the AP13 Creative identity, mission, and early website — a home for the work under one brand.",
+      "Defined the AP13 identity, mission, and early website — a home for the work under one brand.",
     icon: Lightbulb,
   },
   {
     year: "2025",
     title: "Studio Focus",
     description:
-      "Focused AP13 Creative as a boutique studio shipping polished web, mobile, and AI-powered products end to end.",
+      "Focused AP13 as a boutique studio shipping polished web, mobile, and AI-powered products end to end.",
     icon: Users,
   },
 ];

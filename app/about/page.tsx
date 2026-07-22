@@ -19,7 +19,7 @@ import { CtaSection } from "@/components/cta-section";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "AP13 Creative is a senior digital product studio from Split, Croatia — crafting premium web, mobile, and AI software.",
+    "AP13 is a senior digital product studio from Split, Croatia — crafting premium web, mobile, and AI software.",
 };
 
 const principles = [
@@ -78,7 +78,7 @@ export default function AboutPage() {
             <span className="text-gradient">obsession for craft.</span>
           </>
         }
-        description="AP13 Creative is a compact digital studio with 6 years of experience across web, mobile, design systems, AI-enabled workflows, and production launches."
+        description="AP13 is a compact digital studio with 6 years of experience across web, mobile, design systems, AI-enabled workflows, and production launches."
       />
 
       {/* Founder */}
@@ -92,7 +92,7 @@ export default function AboutPage() {
                 <div className="relative aspect-[4/5] w-full">
                   <Image
                     src="/luka-portrait.png"
-                    alt="Luka Bartulović, founder of AP13 Creative"
+                    alt="Luka Bartulović, founder of AP13"
                     fill
                     className="object-cover"
                     sizes="(min-width: 1024px) 24rem, 100vw"
@@ -125,7 +125,7 @@ export default function AboutPage() {
             <p className="eyebrow mb-4">Meet the founder</p>
             <h2 className="text-balance text-4xl text-foreground md:text-5xl">
               The developer behind{" "}
-              <span className="text-gradient">AP13 Creative.</span>
+              <span className="text-gradient">AP13.</span>
             </h2>
             <p className="mt-4 flex flex-wrap items-center gap-x-4 gap-y-1.5 text-sm text-foreground/60">
               <span className="font-mono text-primary">Luka Bartulović</span>
@@ -218,7 +218,7 @@ export default function AboutPage() {
                 code, and shipping discipline.
               </p>
               <p>
-                AP13 Creative is intentionally small. That keeps communication
+                AP13 is intentionally small. That keeps communication
                 direct, quality visible, and every decision close to the people
                 actually designing and building the product.
               </p>
@@ -283,7 +283,7 @@ export default function AboutPage() {
           <Reveal className="mb-14 max-w-2xl">
             <p className="eyebrow mb-4">The journey</p>
             <h2 className="text-balance text-4xl text-foreground md:text-5xl">
-              The path to AP13 Creative.
+              The path to AP13.
             </h2>
             <p className="body-light mt-5">
               Six years of compounding craft — from first freelance launches to

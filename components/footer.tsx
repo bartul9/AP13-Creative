@@ -33,13 +33,13 @@ export function Footer() {
             <Link href="/" className="flex items-center gap-3">
               <Image
                 src="/ap13-cyber-mark.png"
-                alt="AP13 Creative"
+                alt="AP13"
                 width={48}
                 height={48}
                 className="h-11 w-11 rounded-lg border border-primary/30 object-cover shadow-[0_0_24px_-8px_rgba(34,224,242,0.6)]"
               />
               <span className="font-display text-base font-semibold tracking-tight text-foreground">
-                AP13 Creative
+                AP13
               </span>
             </Link>
             <p className="max-w-xs text-sm leading-relaxed text-foreground/60">
@@ -47,10 +47,10 @@ export function Footer() {
               production-grade web, mobile, and AI software.
             </p>
             <a
-              href="https://www.linkedin.com/company/ap13-creative"
+              href="https://www.linkedin.com/company/ap13-dev"
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="AP13 Creative on LinkedIn"
+              aria-label="AP13 on LinkedIn"
               className="inline-flex size-10 items-center justify-center rounded-full border border-border bg-background/40 text-foreground/80 transition-colors hover:border-primary/60 hover:text-primary"
             >
               <Linkedin className="h-4 w-4" />
@@ -85,10 +85,10 @@ export function Footer() {
               <li className="flex items-start gap-2.5">
                 <Mail className="mt-0.5 h-4 w-4 flex-shrink-0 text-primary" />
                 <a
-                  href="mailto:projects@ap13-creative.company"
+                  href="mailto:projects@ap13.dev"
                   className="link-underline break-all text-foreground/65 transition-colors hover:text-foreground"
                 >
-                  projects@ap13-creative.company
+                  projects@ap13.dev
                 </a>
               </li>
             </ul>
@@ -114,7 +114,7 @@ export function Footer() {
 
         <div className="mt-6 flex flex-col items-center justify-between gap-4 border-t border-border/60 pt-8 text-center sm:flex-row sm:text-left">
           <p className="text-xs text-foreground/45">
-            © {new Date().getFullYear()} AP13 Creative. All rights reserved.
+            © {new Date().getFullYear()} AP13. All rights reserved.
           </p>
           <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-foreground/40">
             Designed &amp; built in Croatia

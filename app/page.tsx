@@ -147,7 +147,7 @@ export default function HomePage() {
               className="anim-rise mt-7 max-w-xl text-lg leading-relaxed text-foreground/70"
               style={{ animationDelay: "120ms" }}
             >
-              AP13 Creative is a senior digital studio designing and building
+              AP13 is a senior digital studio designing and building
               web, mobile, and AI-powered software — shipped with speed, taste,
               and engineering discipline.
             </p>
@@ -422,7 +422,7 @@ export default function HomePage() {
             <div className="mt-8 flex items-center justify-center gap-3">
               <Image
                 src="/ap13-cyber-mark.png"
-                alt="AP13 Creative"
+                alt="AP13"
                 width={40}
                 height={40}
                 className="h-10 w-10 rounded-lg border border-primary/30 object-cover"
@@ -432,7 +432,7 @@ export default function HomePage() {
                   Luka Bartulović
                 </p>
                 <p className="text-xs text-foreground/50">
-                  Founder · AP13 Creative
+                  Founder · AP13
                 </p>
               </div>
             </div>

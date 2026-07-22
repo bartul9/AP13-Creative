@@ -6,7 +6,7 @@ import { CtaSection } from "@/components/cta-section";
 export const metadata: Metadata = {
   title: "Work",
   description:
-    "Selected product work from AP13 Creative across web, mobile, SaaS, commerce, and AI.",
+    "Selected product work from AP13 across web, mobile, SaaS, commerce, and AI.",
 };
 
 const projects: Project[] = [
@@ -55,7 +55,7 @@ export default function ProjectsPage() {
             <span className="text-gradient">SaaS, commerce &amp; AI.</span>
           </>
         }
-        description="A representative view of the kinds of digital products AP13 Creative designs, builds, launches, and improves."
+        description="A representative view of the kinds of digital products AP13 designs, builds, launches, and improves."
       />
 
       <section className="section-shell py-24">

@@ -61,7 +61,7 @@ export function Navigation() {
               <span className="relative inline-flex">
                 <Image
                   src="/ap13-cyber-mark.png"
-                  alt="AP13 Creative"
+                  alt="AP13"
                   width={44}
                   height={44}
                   className="h-10 w-10 rounded-lg border border-primary/30 object-cover shadow-[0_0_24px_-6px_rgba(34,224,242,0.6)] transition-transform duration-500 group-hover:scale-105"
@@ -69,7 +69,7 @@ export function Navigation() {
               </span>
               <span className="flex flex-col leading-none">
                 <span className="font-display text-sm font-semibold tracking-tight text-foreground">
-                  AP13 Creative
+                  AP13
                 </span>
                 <span className="font-mono text-[10px] uppercase tracking-[0.28em] text-muted-foreground">
                   Digital Studio

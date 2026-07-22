@@ -9,15 +9,15 @@ import { Navigation } from "@/components/navigation";
 import { Footer } from "@/components/footer";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://ap13-creative.company"),
+  metadataBase: new URL("https://ap13.dev"),
   title: {
-    default: "AP13 Creative — Digital Product Studio",
-    template: "%s | AP13 Creative",
+    default: "AP13 — Digital Product Studio",
+    template: "%s | AP13",
   },
   description:
-    "AP13 Creative is a digital product studio building high-quality web, mobile, and AI software with precision, creativity, and style.",
+    "AP13 is a digital product studio building high-quality web, mobile, and AI software with precision, creativity, and style.",
   keywords: [
-    "AP13 Creative",
+    "AP13",
     "Luka Bartulović",
     "digital studio",
     "web development",
@@ -28,37 +28,37 @@ export const metadata: Metadata = {
     "custom software",
     "startup development partner",
   ],
-  applicationName: "AP13 Creative",
+  applicationName: "AP13",
   authors: [{ name: "Luka Bartulović" }],
-  creator: "AP13 Creative",
-  publisher: "AP13 Creative",
+  creator: "AP13",
+  publisher: "AP13",
   category: "Web Development",
   alternates: {
-    canonical: "https://ap13-creative.company/",
+    canonical: "https://ap13.dev/",
   },
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://ap13-creative.company/",
-    title: "AP13 Creative — Digital Product Studio",
+    url: "https://ap13.dev/",
+    title: "AP13 — Digital Product Studio",
     description:
-      "AP13 Creative delivers high-quality web and mobile applications with precision, creativity, and style.",
-    siteName: "AP13 Creative",
+      "AP13 delivers high-quality web and mobile applications with precision, creativity, and style.",
+    siteName: "AP13",
     images: [
       {
-        url: "https://ap13-creative.company/ap13-cyber-wide.png",
+        url: "https://ap13.dev/ap13-cyber-wide.png",
         width: 1200,
         height: 630,
-        alt: "AP13 Creative branding",
+        alt: "AP13 branding",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "AP13 Creative — Digital Product Studio",
+    title: "AP13 — Digital Product Studio",
     description:
       "Turning your vision into high-quality digital reality with web and mobile app development.",
-    images: ["https://ap13-creative.company/ap13-cyber-wide.png"],
+    images: ["https://ap13.dev/ap13-cyber-wide.png"],
   },
   robots: {
     index: true,
@@ -75,7 +75,7 @@ export const metadata: Metadata = {
     google: "mHiSsF-vFFPSGIBj9qYP8K0ErznmxILmn2J-RmMgPsc",
   },
   appleWebApp: {
-    title: "AP13 Creative",
+    title: "AP13",
   },
   manifest: "/manifest.json",
   icons: {
@@ -98,10 +98,10 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Organization",
-              name: "AP13 Creative",
-              url: "https://ap13-creative.company/",
-              logo: "https://ap13-creative.company/ap13-cyber-mark.png",
-              sameAs: ["https://www.linkedin.com/company/ap13-creative/"],
+              name: "AP13",
+              url: "https://ap13.dev/",
+              logo: "https://ap13.dev/ap13-cyber-mark.png",
+              sameAs: ["https://www.linkedin.com/company/ap13-dev/"],
             }),
           }}
         />
@@ -112,11 +112,11 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "WebSite",
-              name: "AP13 Creative",
-              url: "https://ap13-creative.company/",
+              name: "AP13",
+              url: "https://ap13.dev/",
               potentialAction: {
                 "@type": "SearchAction",
-                target: "https://ap13-creative.company/?q={search_term_string}",
+                target: "https://ap13.dev/?q={search_term_string}",
                 "query-input": "required name=search_term_string",
               },
             }),

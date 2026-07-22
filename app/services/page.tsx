@@ -17,7 +17,7 @@ import { CtaSection } from "@/components/cta-section";
 export const metadata: Metadata = {
   title: "Services",
   description:
-    "Full-cycle digital product services from AP13 Creative — web development, mobile apps, product design, AI integrations, and launch support.",
+    "Full-cycle digital product services from AP13 — web development, mobile apps, product design, AI integrations, and launch support.",
 };
 
 const services = [
@@ -131,7 +131,7 @@ export default function ServicesPage() {
             <span className="text-gradient">engineered end to end.</span>
           </>
         }
-        description="AP13 Creative covers the full product path: strategy, interface design, web and mobile engineering, AI features, integrations, and launch support."
+        description="AP13 covers the full product path: strategy, interface design, web and mobile engineering, AI features, integrations, and launch support."
       />
 
       {/* Core services */}

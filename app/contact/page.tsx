@@ -19,15 +19,15 @@ const contactItems = [
   {
     icon: Mail,
     title: "Email",
-    value: "projects@ap13-creative.company",
-    href: "mailto:projects@ap13-creative.company",
+    value: "projects@ap13.dev",
+    href: "mailto:projects@ap13.dev",
     note: "Send project scope, timelines, or questions.",
   },
   {
     icon: Linkedin,
     title: "LinkedIn",
-    value: "AP13 Creative",
-    href: "https://www.linkedin.com/company/ap13-creative",
+    value: "AP13",
+    href: "https://www.linkedin.com/company/ap13-dev",
     note: "Follow project updates and new work.",
   },
   {
@@ -53,7 +53,7 @@ export default function ContactPage() {
       `Name: ${formData.name}\nEmail: ${formData.email}\n\n${formData.message}`
     );
 
-    window.location.href = `mailto:projects@ap13-creative.company?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:projects@ap13.dev?subject=${subject}&body=${body}`;
   };
 
   return (
