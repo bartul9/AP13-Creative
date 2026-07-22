@@ -1,5 +1,15 @@
 import type { Metadata } from "next";
-import { Code2, Target, Users, Zap } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
+import {
+  ArrowUpRight,
+  Code2,
+  MapPin,
+  Sparkles,
+  Target,
+  Users,
+  Zap,
+} from "lucide-react";
 import { PageHero } from "@/components/page-hero";
 import { Reveal } from "@/components/reveal";
 import { Spotlight } from "@/components/spotlight";
@@ -46,6 +56,17 @@ const facts = [
   { k: "Focus", v: "Web · Mobile · AI" },
 ];
 
+const founderSkills = [
+  "React",
+  "Next.js",
+  "TypeScript",
+  "Node.js",
+  "Supabase",
+  "TailwindCSS",
+  "AI Agents",
+  "Figma",
+];
+
 export default function AboutPage() {
   return (
     <div className="overflow-hidden">
@@ -59,6 +80,114 @@ export default function AboutPage() {
         }
         description="AP13 Creative is a compact digital studio with 6 years of experience across web, mobile, design systems, AI-enabled workflows, and production launches."
       />
+
+      {/* Founder */}
+      <section className="section-shell py-24">
+        <div className="grid gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:items-center">
+          {/* Portrait */}
+          <Reveal variant="scale">
+            <div className="relative mx-auto w-full max-w-sm lg:mx-0">
+              <div className="pointer-events-none absolute -inset-6 -z-10 bg-[radial-gradient(22rem_22rem_at_50%_25%,rgba(34,224,242,0.20),transparent_70%)]" />
+              <div className="border-gradient relative overflow-hidden rounded-2xl">
+                <div className="relative aspect-[4/5] w-full">
+                  <Image
+                    src="/luka-portrait.png"
+                    alt="Luka Bartulović, founder of AP13 Creative"
+                    fill
+                    className="object-cover"
+                    sizes="(min-width: 1024px) 24rem, 100vw"
+                    priority
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-background/85 via-background/10 to-transparent" />
+                </div>
+                {/* floating identity card */}
+                <div className="absolute inset-x-4 bottom-4 flex items-center justify-between gap-3 rounded-xl border border-border/70 bg-background/70 px-4 py-3 backdrop-blur-md">
+                  <div>
+                    <p className="font-display text-sm font-semibold text-foreground">
+                      Luka Bartulović
+                    </p>
+                    <p className="label-caps mt-0.5">Founder · Developer</p>
+                  </div>
+                  <span className="flex items-center gap-2 whitespace-nowrap text-xs text-foreground/60">
+                    <span className="relative flex h-2 w-2">
+                      <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary/70" />
+                      <span className="relative inline-flex h-2 w-2 rounded-full bg-primary" />
+                    </span>
+                    Available
+                  </span>
+                </div>
+              </div>
+            </div>
+          </Reveal>
+
+          {/* Bio */}
+          <Reveal delay={120}>
+            <p className="eyebrow mb-4">Meet the founder</p>
+            <h2 className="text-balance text-4xl text-foreground md:text-5xl">
+              The developer behind{" "}
+              <span className="text-gradient">AP13 Creative.</span>
+            </h2>
+            <p className="mt-4 flex flex-wrap items-center gap-x-4 gap-y-1.5 text-sm text-foreground/60">
+              <span className="font-mono text-primary">Luka Bartulović</span>
+              <span className="hidden h-3 w-px bg-border sm:block" />
+              <span>Senior Full-Stack Developer</span>
+              <span className="hidden h-3 w-px bg-border sm:block" />
+              <span className="inline-flex items-center gap-1.5">
+                <MapPin className="h-3.5 w-3.5 text-primary" />
+                Split, Croatia
+              </span>
+            </p>
+
+            <div className="mt-7 space-y-5 text-lg leading-relaxed text-foreground/70">
+              <p>
+                Luka is a senior full-stack developer with 6 years of experience
+                designing and delivering scalable, high-performance web
+                applications. He specializes in React, Next.js, and TypeScript,
+                building user-centric, responsive interfaces for clients across
+                Europe and the US.
+              </p>
+              <p>
+                His focus is AI-powered product development and clean
+                architecture - from custom AI agents that automate real
+                workflows to full-stack apps with real-time messaging,
+                analytics, and intelligent assistance. Having led front-end work
+                on high-traffic international platforms, he owns each project
+                end to end: architecture, interface, engineering, and launch.
+              </p>
+            </div>
+
+            <div className="mt-7 flex flex-wrap gap-2">
+              {founderSkills.map((skill) => (
+                <span key={skill} className="chip">
+                  {skill}
+                </span>
+              ))}
+            </div>
+
+            <Spotlight className="panel spotlight mt-8 flex items-start gap-4 p-5">
+              <span className="mt-0.5 flex size-9 flex-shrink-0 items-center justify-center rounded-full border border-primary/30 bg-primary/[0.06] text-primary">
+                <Sparkles className="h-4 w-4" />
+              </span>
+              <div>
+                <p className="label-caps mb-1.5">Currently</p>
+                <p className="text-sm leading-relaxed text-foreground/70">
+                  Architecting and leading front-end for an Austrian real-estate
+                  platform in Next.js &amp; TypeScript, with custom AI agents
+                  for property search and lead qualification.
+                </p>
+              </div>
+            </Spotlight>
+
+            <Link
+              href="/contact"
+              className="mt-8 inline-flex items-center gap-1.5 text-sm font-medium text-primary transition-colors hover:text-cyan"
+            >
+              Work with Luka
+              <ArrowUpRight className="h-4 w-4" />
+            </Link>
+          </Reveal>
+        </div>
+      </section>
 
       {/* Story */}
       <section className="section-shell py-24">
@@ -125,7 +254,11 @@ export default function AboutPage() {
             {principles.map((principle, index) => {
               const Icon = principle.icon;
               return (
-                <Reveal key={principle.title} delay={index * 90} variant="scale">
+                <Reveal
+                  key={principle.title}
+                  delay={index * 90}
+                  variant="scale"
+                >
                   <Spotlight className="panel panel-hover group h-full p-7">
                     <div className="mb-6 flex size-12 items-center justify-center rounded-xl border border-primary/25 bg-primary/[0.06] text-primary">
                       <Icon className="h-5 w-5" />
